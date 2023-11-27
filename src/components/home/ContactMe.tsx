@@ -40,7 +40,11 @@ function ContactMe() {
           <Text color="#282938" fontSize="40px" fontWeight="700" pb="20px">
             Contact Me
           </Text>
-          <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
+          <Text>
+            If you have any questions, project inquiries, or just want to say
+            hello, feel free to reach out. I'm here to help and excited to
+            connect with you!
+          </Text>
         </Flex>
 
         <Box marginTop={10}>

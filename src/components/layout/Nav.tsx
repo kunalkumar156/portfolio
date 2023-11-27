@@ -37,7 +37,7 @@ function Nav() {
                 textDecoration: "none",
               }}
             >
-              Portfolio
+              Expertise
             </Link>
             <Link
               href="#"

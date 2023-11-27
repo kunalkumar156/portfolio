@@ -1,6 +1,7 @@
 import { Container, Box, Flex, Image, Link, Text } from "@chakra-ui/react";
 import React from "react";
-import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import { SiHashnode } from "react-icons/si";
 
 function Footer() {
   return (
@@ -15,12 +16,12 @@ function Footer() {
               <Link _hover={{ textDecoration: "none" }}>About Me</Link>
               <Link _hover={{ textDecoration: "none" }}>Contact</Link>
               <Link _hover={{ textDecoration: "none" }}>Testimonials</Link>
-              <Link _hover={{ textDecoration: "none" }}>Portfolio</Link>
+              <Link _hover={{ textDecoration: "none" }}>Resume</Link>
             </Flex>
 
             <Flex justify="center" align="center" gap={4}>
-              <FaInstagram size={23} />
-              <FaFacebook size={23} />
+              <FaGithub size={23} />
+              <SiHashnode size={23} />
               <FaTwitter size={23} />
               <FaLinkedin size={23} />
             </Flex>

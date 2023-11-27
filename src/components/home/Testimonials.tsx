@@ -76,7 +76,7 @@ function Testimonials() {
             />
             <ReviewBox
               key="user1"
-              review="Kunal is a dedicated and skilled developer. His ability to seamlessly integrate Chakra UI and Linux into our projects has been invaluable. His attention to detail and commitment to excellence make him a standout professional in the field. Highly recommended!"
+              review="Kunal is a dedicated and skilled developer. His ability to seamlessly integrate Chakra UI into our projects has been invaluable. His attention to detail make him a standout professional in the field. Highly recommended!"
               userimg="user2.png"
               username="Shubham Raj"
               workplace="Company Z"
