@@ -68,26 +68,26 @@ function Testimonials() {
           <Flex alignItems="center" gap={8}>
             <ReviewBox
               key="user1"
-              review="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."
+              review="Working with Kunal has been an absolute pleasure. His expertise in web development, along with his proficiency in tools like Yarn, npm, and Sass, has greatly contributed to our success. Looking forward to more collaborations!"
               userimg="user1.png"
-              username="Jack Harlow"
-              workplace="Fings"
+              username="Rahul Sharma"
+              workplace="Company A"
               rating={5}
             />
             <ReviewBox
               key="user1"
-              review="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."
+              review="Kunal is a dedicated and skilled developer. His ability to seamlessly integrate Chakra UI and Linux into our projects has been invaluable. His attention to detail and commitment to excellence make him a standout professional in the field. Highly recommended!"
               userimg="user2.png"
-              username="Dannie Rusell"
-              workplace="Apples"
+              username="Shubham Raj"
+              workplace="Company Z"
               rating={4}
             />
             <ReviewBox
               key="user1"
-              review="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."
+              review="Kunal's expertise in web development is truly commendable. His proficiency in Material-UI and Figma has allowed us to create stunning and user-friendly interfaces. He consistently delivers high-quality work and is a valuable asset to any team."
               userimg="user3.png"
-              username="Joseph"
-              workplace="WorkX"
+              username="Animesh Saurya"
+              workplace="Company X"
               rating={5}
             />
           </Flex>
