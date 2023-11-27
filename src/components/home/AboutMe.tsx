@@ -12,20 +12,33 @@ function AboutMe() {
           </Box>
           <Box width="90%" padding="1rem 5rem">
             <Text fontWeight="600" color="#282938" pb="10px">
-              About
-            </Text>
-            <Text color="#282938" fontSize="40px" fontWeight="700" pb="20px">
               About Me
             </Text>
+            <Text color="#282938" fontSize="40px" fontWeight="700" pb="20px">
+              Hi, I'm Kunal
+            </Text>
             <Text color="#1C1E53">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-              varius faucibus massa sollicitudin amet augue. Nibh metus a semper
-              purus mauris duis. Lorem eu neque, tristique quis duis. Nibh
-              scelerisque ac adipiscing velit non nulla in amet pellentesque.
+              I'm a web developer specializing in front-end technologies with a
+              diverse set of skills and experiences. My journey in web
+              development has been enriched by working with various tools and
+              frameworks.
               <Text color="#1c1e53" paddingTop="20px">
-                Sit turpis pretium eget maecenas. Vestibulum dolor mattis
-                consectetur eget commodo vitae. Amet pellentesque sit pulvinar
-                lorem mi a, euismod risus r.
+                I have extensive experience using package managers like Yarn and
+                npm to manage project dependencies efficiently. My styling
+                expertise includes working with Sass to create maintainable and
+                scalable stylesheets.
+              </Text>
+              <Text color="#1c1e53" paddingTop="20px">
+                I am well-versed in building responsive and accessible user
+                interfaces using Chakra UI and Material-UI. My proficiency
+                extends to collaborating with design teams, where I leverage
+                tools like Figma and Canva to bring creative concepts to life.
+              </Text>
+              <Text color="#1c1e53" paddingTop="20px">
+                In addition, I am comfortable working in a Linux environment,
+                ensuring smooth development workflows. I am always eager to
+                explore new technologies and frameworks to enhance my skills and
+                deliver high-quality web applications.
               </Text>
             </Text>
           </Box>
