@@ -1,10 +1,9 @@
 import { Box, Container, Text } from "@chakra-ui/react";
 import React from "react";
 
-import { IoLogoWebComponent } from "react-icons/io5";
-import { MdDesignServices } from "react-icons/md";
-import { MdGraphicEq } from "react-icons/md";
-import { FaProductHunt } from "react-icons/fa";
+import { FaJs, FaSass, FaNpm } from "react-icons/fa";
+import { SiTailwindcss } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
 
 function MySkills({
   IconComponent,
@@ -38,10 +37,12 @@ function MySkills({
       >
         <IconComponent />
       </Box>
-      <Text fontSize="20px" fontWeight="700" mt="3" mb="3" color="#282938">
+      <Text fontSize="22px" fontWeight="700" mt="3" mb="3" color="#282938">
         {heading}
       </Text>
-      <Text color="#1C1E53">{para}</Text>
+      <Text color="#1C1E53" fontWeight="600" fontSize="14px">
+        {para}
+      </Text>
     </Box>
   );
 }
@@ -59,28 +60,35 @@ function Expertise() {
 
         <Box display="flex" justifyContent="space-around" gap="32px">
           <MySkills
-            key="brain"
-            IconComponent={IoLogoWebComponent}
-            heading="Strategy & Direction"
-            para="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+            key="Javascript"
+            IconComponent={FaJs}
+            heading="JavaScript"
+            para="Building interactive and dynamic web applications."
           />
           <MySkills
-            key="brain"
-            IconComponent={MdDesignServices}
-            heading="UI/UX Design"
-            para="Creating intuitive and visually appealing user interfaces."
+            key="Next.js"
+            IconComponent={TbBrandNextjs}
+            heading="Next.js"
+            para="Building server-side rendered and statically generated React applications."
+          />
+
+          <MySkills
+            key="UIlibs"
+            IconComponent={FaNpm}
+            heading="UI Libraries"
+            para="Experience with various UI libraries and component ecosystems."
           />
           <MySkills
-            key="brain"
-            IconComponent={MdGraphicEq}
-            heading="Graphic Design"
-            para="Designing logos, banners, and other graphic elements."
+            key="sass"
+            IconComponent={FaSass}
+            heading="SASS"
+            para="Styling web applications with the power of SASS preprocessor."
           />
           <MySkills
-            key="brain"
-            IconComponent={FaProductHunt}
-            heading="Product Strategy"
-            para="Crafting effective strategies for product development."
+            key="tailwind"
+            IconComponent={SiTailwindcss}
+            heading="Tailwind CSS"
+            para="Utilizing utility-first CSS framework for efficient styling."
           />
         </Box>
       </Container>
