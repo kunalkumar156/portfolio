@@ -54,25 +54,25 @@ function Portfolio() {
         <Flex gap={5}>
           <PortfolioCard
             key="first project"
-            image="portfolio1.png"
-            heading="Ahuse"
-            para="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
+            image="natours.png"
+            heading="Natours"
+            para="Natours is a nature tour packages website, providing a platform for users to explore and book various nature tours."
             link="Github"
             link2="View Project"
           />
           <PortfolioCard
             key="first project"
-            image="portfolio2.png"
-            heading="App Dashboard"
-            para="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
+            image="asvaventures.png"
+            heading="Asva Ventures"
+            para="Asva Ventures is a web 3 related platform that explores the latest advancements in web technologies."
             link="Github"
             link2="View Project"
           />
           <PortfolioCard
             key="first project"
-            image="portfolio3.png"
-            heading="Easy Rent"
-            para="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
+            image="newsmonkey.png"
+            heading="News Monkey"
+            para="News Monkey is a comprehensive news platform that delivers the latest and most relevant news to its users."
             link="Github"
             link2="View Project"
           />
