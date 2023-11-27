@@ -50,7 +50,7 @@ function Hero() {
             </Box>
 
             <Box width="100%">
-              <Image src="heroImage.png" alt="hero Image" />
+              <Image bg="#F5FCFF" src="heroImage.png" alt="hero Image" />
             </Box>
           </Flex>
         </Container>

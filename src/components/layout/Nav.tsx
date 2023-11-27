@@ -57,6 +57,15 @@ function Nav() {
             >
               Testimonials
             </Link>
+            <Link
+              href="#"
+              _hover={{
+                color: "#5E3BEE",
+                textDecoration: "none",
+              }}
+            >
+              Resume
+            </Link>
           </Flex>
 
           {/* Contact Button */}

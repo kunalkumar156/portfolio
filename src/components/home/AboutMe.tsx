@@ -23,12 +23,6 @@ function AboutMe() {
               development has been enriched by working with various tools and
               frameworks.
               <Text color="#1c1e53" paddingTop="20px">
-                I have extensive experience using package managers like Yarn and
-                npm to manage project dependencies efficiently. My styling
-                expertise includes working with Sass to create maintainable and
-                scalable stylesheets.
-              </Text>
-              <Text color="#1c1e53" paddingTop="20px">
                 I am well-versed in building responsive and accessible user
                 interfaces using Chakra UI and Material-UI. My proficiency
                 extends to collaborating with design teams, where I leverage
