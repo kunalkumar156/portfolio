@@ -9,7 +9,7 @@ function Footer() {
       <Box background="#F5FCFF" mt="3rem" mb="4rem">
         <Container maxW="1200" p="3rem 0rem">
           <Flex justify="space-between" alignItems="center" py={4} wrap="wrap">
-            <Image src="logo.svg" alt="logo" height={7} />
+            <Image src="logo.svg" alt="logo" height={10} />
             <Flex gap={5}>
               <Link _hover={{ textDecoration: "none" }}>Home</Link>
               <Link _hover={{ textDecoration: "none" }}>Portfolio</Link>

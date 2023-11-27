@@ -16,7 +16,7 @@ function Nav() {
         >
           {/* Logo */}
           <Link href="#" height="40px">
-            <Image src="logo.svg" alt="logo" />
+            <Image src="logo.svg" alt="logo" height="50px" />
           </Link>
 
           {/* Other links */}
