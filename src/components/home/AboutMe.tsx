@@ -15,11 +15,11 @@ function AboutMe() {
               About Me
             </Text>
             <Text color="#282938" fontSize="40px" fontWeight="700" pb="20px">
-              Hi, I'm Kunal
+              Hi, I&apos;m Kunal
             </Text>
             <Text color="#1C1E53">
-              I'm a web developer specializing in front-end technologies with a
-              diverse set of skills and experiences. My journey in web
+              I&apos;m a web developer specializing in front-end technologies
+              with a diverse set of skills and experiences. My journey in web
               development has been enriched by working with various tools and
               frameworks.
               <Text color="#1c1e53" paddingTop="20px">

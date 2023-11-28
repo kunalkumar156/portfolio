@@ -15,7 +15,7 @@ function Hero() {
                 lineHeight="150%"
                 pb="12px"
               >
-                Hi, I'm Kunal
+                Hi, I&apos;m Kunal
               </Text>
               <Text
                 color="#282938"
@@ -42,7 +42,7 @@ function Hero() {
                 interfaces and Passionate about creating beautiful user
                 experiences with the latest web technologies.{" "}
                 <Text as="span" color="#5E3BEE" fontWeight="600">
-                  Let's bring your projects to life!
+                  Let&apos;s bring your projects to life!
                 </Text>
               </Text>
 

@@ -11,9 +11,6 @@
   font-style: normal;
 }
 
-/* font import by link */
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"); */
-
 * {
   margin: 0;
   padding: 0;
@@ -39,12 +36,11 @@
   color: #5e3bee;
   background-color: transparent;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  /* Hover styles */
-  &:hover {
-    background-color: #5e3bee;
-    color: #fff;
-  }
+.btn-outline:hover {
+  background-color: #5e3bee;
+  color: #fff;
 }
 
 .opposite-button {
@@ -62,12 +58,10 @@
   color: #fff;
   background-color: #5e3bee;
   transition: background-color 0.3s ease, color 0.3s ease;
-
-  /* Hover styles */
-  &:hover {
-    background-color: #fff;
-    color: #5e3bee;
-  }
+}
+.opposite-button:hover {
+  background-color: #fff;
+  color: #5e3bee;
 }
 
 .arrow-button {
