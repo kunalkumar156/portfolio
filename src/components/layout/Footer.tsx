@@ -5,11 +5,20 @@ import {
   Image,
   Link,
   Text,
-  Stack,
+  Link as ChakraLink,
 } from "@chakra-ui/react";
 import React from "react";
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiHashnode } from "react-icons/si";
+
+const styles = {
+  deskLink: {
+    _hover: {
+      color: "#5E3BEE",
+      textDecoration: "none",
+    },
+  },
+};
 
 function Footer() {
   return (
@@ -35,12 +44,24 @@ function Footer() {
             flexDirection={{ base: "column", md: "row" }}
             display={{ base: "none", md: "flex" }}
           >
-            <Link _hover={{ textDecoration: "none" }}>Home</Link>
-            <Link _hover={{ textDecoration: "none" }}>Portfolio</Link>
-            <Link _hover={{ textDecoration: "none" }}>About Me</Link>
-            <Link _hover={{ textDecoration: "none" }}>Contact</Link>
-            <Link _hover={{ textDecoration: "none" }}>Testimonials</Link>
-            <Link _hover={{ textDecoration: "none" }}>Resume</Link>
+            <ChakraLink href="#" sx={styles.deskLink}>
+              Home
+            </ChakraLink>
+            <ChakraLink href="#" sx={styles.deskLink}>
+              Portfolio
+            </ChakraLink>
+            <ChakraLink href="#" sx={styles.deskLink}>
+              About Me
+            </ChakraLink>
+            <ChakraLink href="#" sx={styles.deskLink}>
+              Contact
+            </ChakraLink>
+            <ChakraLink href="#" sx={styles.deskLink}>
+              Testimonials
+            </ChakraLink>
+            <ChakraLink href="#" sx={styles.deskLink}>
+              Resume
+            </ChakraLink>
           </Flex>
 
           <Flex
