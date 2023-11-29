@@ -48,6 +48,12 @@ const styles = {
 function Nav() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const handleLinkClick = () => {
+    {
+      onClose();
+    }
+  };
+
   return (
     <>
       <Container maxW={1300}>
@@ -84,10 +90,10 @@ function Nav() {
             <ChakraLink href="/" sx={styles.deskLink}>
               Home
             </ChakraLink>
-            <ChakraLink href="#" sx={styles.deskLink}>
+            <ChakraLink href="/" sx={styles.deskLink}>
               Expertise
             </ChakraLink>
-            <ChakraLink href="#" sx={styles.deskLink}>
+            <ChakraLink href="#aboutme" sx={styles.deskLink}>
               About Me
             </ChakraLink>
             <ChakraLink href="#" sx={styles.deskLink}>
@@ -118,23 +124,43 @@ function Nav() {
               <DrawerBody>
                 {/* Your navigation links */}
                 <Flex flexDirection="column">
-                  <ChakraLink href="#" sx={styles.mobLink}>
+                  <ChakraLink
+                    href="/"
+                    sx={styles.mobLink}
+                    onClick={handleLinkClick}
+                  >
                     Home
                   </ChakraLink>
                   <hr style={styles.mobRow} />
-                  <ChakraLink href="#" sx={styles.mobLink}>
+                  <ChakraLink
+                    href="#expertise"
+                    sx={styles.mobLink}
+                    onClick={handleLinkClick}
+                  >
                     Expertise
                   </ChakraLink>
                   <hr style={styles.mobRow} />
-                  <ChakraLink href="#" sx={styles.mobLink}>
+                  <ChakraLink
+                    href="#"
+                    sx={styles.mobLink}
+                    onClick={handleLinkClick}
+                  >
                     About Me
                   </ChakraLink>
                   <hr style={styles.mobRow} />
-                  <ChakraLink href="#" sx={styles.mobLink}>
+                  <ChakraLink
+                    href="#"
+                    sx={styles.mobLink}
+                    onClick={handleLinkClick}
+                  >
                     Blogs
                   </ChakraLink>
                   <hr style={styles.mobRow} />
-                  <ChakraLink href="#" sx={styles.mobLink}>
+                  <ChakraLink
+                    href="#"
+                    sx={styles.mobLink}
+                    onClick={handleLinkClick}
+                  >
                     Resume
                   </ChakraLink>
                   <hr style={styles.mobRow} />
