@@ -21,9 +21,10 @@ function MySkills({
       padding={{ base: "20px", md: "32px" }}
       borderRadius="10px"
       mb={{ base: "20px", md: "0" }}
+      borderBottom="2px solid #fff"
       _hover={{
         borderBottom: "2px solid #5E3BEE",
-        transition: "border-bottom 0.1s ease, color 0.1s ease",
+        transition: "border-bottom 0.3s ease, color 0.1s ease",
       }}
     >
       <Box

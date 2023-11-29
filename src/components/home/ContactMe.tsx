@@ -46,8 +46,8 @@ function ContactMe() {
         </Text>
         <Text textAlign="center" width={{ base: "90%", md: "50%" }}>
           If you have any questions, project inquiries, or just want to say
-          hello, feel free to reach out. I'm here to help and excited to connect
-          with you!
+          hello, feel free to reach out. I&apos;m here to help and excited to
+          connect with you!
         </Text>
       </Flex>
 
