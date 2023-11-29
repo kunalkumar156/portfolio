@@ -3,7 +3,7 @@ import React from "react";
 
 const boxStyles = {
   boxDetail: {
-    fontSize: "14px",
+    fontSize: { base: "12px", md: "14px" },
     color: "#282938",
     padding: "10px",
     border: "1px solid #5E3BEE",
@@ -14,7 +14,7 @@ const boxStyles = {
     },
   },
   text: {
-    fontSize: "14px",
+    fontSize: { base: "12px", md: "14px" },
     color: "#282938",
     marginBottom: "5px",
   },
@@ -22,62 +22,79 @@ const boxStyles = {
 
 function Details({ detailType }: { detailType: string }) {
   return (
-    <Box width="25%">
-      <Text style={boxStyles.text}>{detailType}</Text>
-      <Input style={boxStyles.boxDetail} />
+    <Box width={{ base: "100%", md: "25%" }}>
+      <Text sx={boxStyles.text}>{detailType}</Text>
+      <Input sx={boxStyles.boxDetail} />
     </Box>
   );
 }
 
 function ContactMe() {
   return (
-    <>
-      <Container maxW="1200" padding="3rem 0">
-        <Flex alignItems="center" justifyContent="center" direction="column">
-          <Text fontWeight="600" color="#282938" pb="10px">
-            Get In Touch
-          </Text>
-          <Text color="#282938" fontSize="40px" fontWeight="700" pb="20px">
-            Contact Me
-          </Text>
-          <Text>
-            If you have any questions, project inquiries, or just want to say
-            hello, feel free to reach out. I&apos;m here to help and excited to
-            connect with you!
-          </Text>
+    <Container maxW="1200" padding="3rem 0">
+      <Flex alignItems="center" justifyContent="center" direction="column">
+        <Text fontWeight="600" color="#282938" pb="10px">
+          Get In Touch
+        </Text>
+        <Text
+          color="#282938"
+          fontSize={{ base: "32px", md: "40px" }}
+          fontWeight="700"
+          pb="20px"
+        >
+          Contact Me
+        </Text>
+        <Text textAlign="center" width={{ base: "90%", md: "50%" }}>
+          If you have any questions, project inquiries, or just want to say
+          hello, feel free to reach out. I'm here to help and excited to connect
+          with you!
+        </Text>
+      </Flex>
+
+      <Box marginTop={10} margin={{ base: "30px", md: "0" }}>
+        <Flex
+          justifyContent="center"
+          flexWrap="wrap"
+          gap={{ base: 5, md: 10 }}
+          mb="1.5rem"
+        >
+          <Details key="first detail" detailType="First Name" />
+          <Details key="second detail" detailType="Last Name" />
         </Flex>
+        <Flex
+          justifyContent="center"
+          flexWrap="wrap"
+          gap={{ base: 5, md: 10 }}
+          mb="1.5rem"
+        >
+          <Details key="third detail" detailType="Email" />
+          <Details key="fourth detail" detailType="Phone Number" />
+        </Flex>
+      </Box>
 
-        <Box marginTop={10}>
-          <Flex justifyContent="center" gap={10} mb="1.5rem">
-            <Details key="first detail" detailType="First Name" />
-            <Details key="second detail" detailType="Last Name" />
-          </Flex>
+      <Box margin={{ base: "30px", md: "0" }}>
+        <Flex justify="center" align="center" flexDirection="column">
+          <Box width={{ base: "100%", md: "53.4%" }} mb="1.5rem">
+            <Text sx={{ ...boxStyles.text }}>Choose A Topic</Text>
+            <Input sx={boxStyles.boxDetail} />
+          </Box>
+          <Box width={{ base: "100%", md: "53.4%" }} mb="1.5rem">
+            <Text sx={boxStyles.text}>Message</Text>
+            <Input sx={boxStyles.boxDetail} />
+          </Box>
+          <Checkbox
+            textAlign="left"
+            isChecked={false}
+            // onClick={{ isChecked: "true" }}
+            mb="1.5rem"
+          >
+            I accept the terms
+          </Checkbox>
 
-          <Flex justifyContent="center" gap={10} mb="1.5rem">
-            <Details key="third detail" detailType="Email" />
-            <Details key="fourth detail" detailType="Phone Number" />
-          </Flex>
-        </Box>
-
-        <Box>
-          <Flex justify="center" align="center" flexDirection="column">
-            <Box width="53.4%" mb="1.5rem">
-              <Text style={boxStyles.text}>Choose A Topic</Text>
-              <Input style={boxStyles.boxDetail} />
-            </Box>
-            <Box width="53.4%" mb="1.5rem">
-              <Text style={boxStyles.text}>Message</Text>
-              <Input style={boxStyles.boxDetail} />
-            </Box>
-            <Checkbox textAlign="left" isChecked={false} mb="1.5rem">
-              I accept the terms
-            </Checkbox>
-
-            <button className="opposite-button">Submit</button>
-          </Flex>
-        </Box>
-      </Container>
-    </>
+          <button className="opposite-button">Submit</button>
+        </Flex>
+      </Box>
+    </Container>
   );
 }
 
