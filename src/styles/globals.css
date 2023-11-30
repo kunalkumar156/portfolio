@@ -64,8 +64,7 @@
   color: #5e3bee;
 }
 
-.arrow-button,
-.arrow-button:disabled {
+.arrow-button {
   gap: 10px;
   display: inline-flex;
   align-items: center;

@@ -8,12 +8,14 @@ function PortfolioCard({
   para,
   link,
   link2,
+  isGitHubDisabled,
 }: {
   image: string;
   heading: string;
   para: string;
   link: string;
   link2: string;
+  isGitHubDisabled?: boolean;
 }) {
   return (
     <Box
@@ -39,8 +41,8 @@ function PortfolioCard({
           align="center"
           gap={{ base: 4, md: 8 }}
         >
-          <button className="arrow-button">
-            {link}
+          <button className="arrow-button" disabled={isGitHubDisabled}>
+            {isGitHubDisabled ? "Private Repo" : link}
             <RxArrowTopRight color="#006B6A" />
           </button>
 
@@ -76,6 +78,7 @@ function Portfolio() {
           para="Natours is a nature tour packages website, providing a platform for users to explore and book various nature tours."
           link="Github"
           link2="View Project"
+          isGitHubDisabled={false}
         />
         <PortfolioCard
           key="second project"
@@ -84,6 +87,7 @@ function Portfolio() {
           para="Asva Ventures is a web 3 related platform that explores the latest advancements in web technologies."
           link="Github"
           link2="View Project"
+          isGitHubDisabled={true}
         />
         <PortfolioCard
           key="third project"
@@ -92,6 +96,7 @@ function Portfolio() {
           para="News Monkey is a comprehensive news platform that delivers the latest and most relevant news to its users."
           link="Github"
           link2="View Project"
+          isGitHubDisabled={false}
         />
       </Flex>
     </Container>
