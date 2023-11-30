@@ -9,6 +9,7 @@ function PortfolioCard({
   link,
   link2,
   isGitHubDisabled,
+  isProjectDisabled,
 }: {
   image: string;
   heading: string;
@@ -16,6 +17,7 @@ function PortfolioCard({
   link: string;
   link2: string;
   isGitHubDisabled?: boolean;
+  isProjectDisabled?: boolean;
 }) {
   return (
     <Box
@@ -52,10 +54,15 @@ function PortfolioCard({
             <RxArrowTopRight color="#006B6A" />
           </button>
 
-          <button className="arrow-button">
-            <a href={link2} target="_blank" rel="noopener noreferrer">
-              View Project
-            </a>{" "}
+          <button className="arrow-button" disabled={isProjectDisabled}>
+            {isProjectDisabled ? (
+              "On Development"
+            ) : (
+              <a href={link2} target="_blank" rel="noopener noreferrer">
+                View Project
+              </a>
+            )}
+
             <RxArrowTopRight color="#006B6A" />
           </button>
         </Flex>
@@ -88,6 +95,7 @@ function Portfolio() {
           link="https://github.com/kunalkumar156/Natours-Exciting-tours-for-adventrous-peoples-"
           link2="https://natours-exciting-tours-for-adventrous-peoples.vercel.app/"
           isGitHubDisabled={false}
+          isProjectDisabled={false}
         />
         <PortfolioCard
           key="second project"
@@ -97,15 +105,17 @@ function Portfolio() {
           link="Github"
           link2="https://asvaventures.com/"
           isGitHubDisabled={true}
+          isProjectDisabled={false}
         />
         <PortfolioCard
           key="third project"
           image="newsmonkey.png"
           heading="News Monkey"
           para="News Monkey is a comprehensive news platform that delivers the latest and most relevant news to its users."
-          link="https://github.com/kunalkumar156/Natours-Exciting-tours-for-adventrous-peoples-"
+          link="https://github.com/kunalkumar156/News_Monkey-React-App"
           link2="View Project"
           isGitHubDisabled={false}
+          isProjectDisabled={true}
         />
       </Flex>
     </Container>
