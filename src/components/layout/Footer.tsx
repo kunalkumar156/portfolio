@@ -50,16 +50,20 @@ function Footer() {
             <ChakraLink href="#portfolio" sx={styles.deskLink}>
               Portfolio
             </ChakraLink>
-            <ChakraLink href="#" sx={styles.deskLink}>
+            <ChakraLink href="#aboutme" sx={styles.deskLink}>
               About Me
             </ChakraLink>
-            <ChakraLink href="#" sx={styles.deskLink}>
+            <ChakraLink href="#contactme" sx={styles.deskLink}>
               Contact
             </ChakraLink>
-            <ChakraLink href="#" sx={styles.deskLink}>
-              Testimonials
+            <ChakraLink href="#blogs" sx={styles.deskLink}>
+              Blogs
             </ChakraLink>
-            <ChakraLink href="#" sx={styles.deskLink}>
+            <ChakraLink
+              href="/resume.pdf"
+              download="kishor-kunal-resume.pdf"
+              sx={styles.deskLink}
+            >
               Resume
             </ChakraLink>
           </Flex>
@@ -70,10 +74,18 @@ function Footer() {
             gap={4}
             mt={{ base: "2", md: "0" }}
           >
-            <FaGithub size={23} />
-            <SiHashnode size={23} />
-            <FaTwitter size={23} />
-            <FaLinkedin size={23} />
+            <a href="https://github.com/kunalkumar156">
+              <FaGithub size={23} />
+            </a>
+            <a href="https://devsavant.hashnode.dev/">
+              <SiHashnode size={23} />
+            </a>
+            <a href="https://twitter.com/btwitskishor">
+              <FaTwitter size={23} />
+            </a>
+            <a href="https://www.linkedin.com/in/kishor-kunal-8a5656196/">
+              <FaLinkedin size={23} />
+            </a>
           </Flex>
         </Flex>
 
@@ -88,7 +100,7 @@ function Footer() {
 
         <Flex
           alignItems="center"
-          justify="space-between"
+          justify="center"
           flexDirection={{ base: "column", md: "row" }}
           flexWrap={{ base: "wrap", md: "nowrap" }}
         >
@@ -98,34 +110,6 @@ function Footer() {
           >
             Crafted with ❤️ by Kishor Kunal
           </Text>
-
-          <Flex
-            direction={{ base: "column", md: "row" }}
-            gap={2}
-            ml={{ md: "auto" }}
-            alignItems={{ base: "center" }}
-            justify={{ base: "center" }}
-            display={{ base: "none", md: "flex" }}
-          >
-            <Link
-              fontSize={{ base: "10px", md: "13px" }}
-              _hover={{ textDecoration: "none" }}
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              fontSize={{ base: "10px", md: "13px" }}
-              _hover={{ textDecoration: "none" }}
-            >
-              Terms Of Services
-            </Link>
-            <Link
-              fontSize={{ base: "10px", md: "13px" }}
-              _hover={{ textDecoration: "none" }}
-            >
-              Cookies Settings
-            </Link>
-          </Flex>
         </Flex>
       </Container>
     </Box>

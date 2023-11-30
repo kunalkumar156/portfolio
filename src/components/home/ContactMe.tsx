@@ -31,7 +31,7 @@ function Details({ detailType }: { detailType: string }) {
 
 function ContactMe() {
   return (
-    <Container maxW="1200" padding="3rem 0" id="contactme">
+    <Container maxW="1200" padding="2rem 0" id="contactme">
       <Flex alignItems="center" justifyContent="center" direction="column">
         <Text fontWeight="600" color="#282938" pb="10px">
           Get In Touch
@@ -78,19 +78,10 @@ function ContactMe() {
             <Text sx={{ ...boxStyles.text }}>Choose A Topic</Text>
             <Input sx={boxStyles.boxDetail} />
           </Box>
-          <Box width={{ base: "100%", md: "53.4%" }} mb="1.5rem">
+          <Box width={{ base: "100%", md: "53.4%" }} mb="2rem">
             <Text sx={boxStyles.text}>Message</Text>
             <Input sx={boxStyles.boxDetail} />
           </Box>
-          <Checkbox
-            textAlign="left"
-            isChecked={false}
-            // onClick={{ isChecked: "true" }}
-            mb="1.5rem"
-          >
-            I accept the terms
-          </Checkbox>
-
           <button className="opposite-button">Submit</button>
         </Flex>
       </Box>

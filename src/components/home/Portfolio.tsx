@@ -102,7 +102,7 @@ function Portfolio() {
           image="asvaventures.png"
           heading="Asva Ventures"
           para="Asva Ventures is a web 3 related platform that explores the latest advancements in web technologies."
-          link="Github"
+          link=""
           link2="https://asvaventures.com/"
           isGitHubDisabled={true}
           isProjectDisabled={false}
