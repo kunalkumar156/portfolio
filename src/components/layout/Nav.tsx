@@ -13,6 +13,7 @@ import {
   DrawerBody,
   Link as ChakraLink,
 } from "@chakra-ui/react";
+
 import { RxHamburgerMenu } from "react-icons/rx";
 
 import React from "react";
@@ -67,7 +68,7 @@ function Nav() {
           color="#1C1E53"
         >
           {/* Logo */}
-          <Link href="#">
+          <Link href="/">
             <Image
               src="logo.svg"
               alt="logo"
@@ -87,19 +88,23 @@ function Nav() {
             gap={{ base: "20px", md: "30px" }}
           >
             {/* Your navigation links */}
-            <ChakraLink href="/" sx={styles.deskLink}>
+            <Link href="/" sx={styles.deskLink}>
               Home
-            </ChakraLink>
-            <ChakraLink href="/" sx={styles.deskLink}>
+            </Link>
+            <Link href="#expertise" sx={styles.deskLink}>
               Expertise
-            </ChakraLink>
-            <ChakraLink href="#aboutme" sx={styles.deskLink}>
+            </Link>
+            <Link href="#aboutme" sx={styles.deskLink}>
               About Me
-            </ChakraLink>
-            <ChakraLink href="#" sx={styles.deskLink}>
+            </Link>
+            <Link href="https://devsavant.hashnode.dev/" sx={styles.deskLink}>
               Blogs
-            </ChakraLink>
-            <ChakraLink href="#" sx={styles.deskLink}>
+            </Link>
+            <ChakraLink
+              href="/resume.pdf"
+              download="kishor-kunal-resume.pdf"
+              sx={styles.deskLink}
+            >
               Resume
             </ChakraLink>
           </Flex>
@@ -124,42 +129,38 @@ function Nav() {
               <DrawerBody>
                 {/* Your navigation links */}
                 <Flex flexDirection="column">
-                  <ChakraLink
-                    href="/"
-                    sx={styles.mobLink}
-                    onClick={handleLinkClick}
-                  >
+                  <Link href="/" sx={styles.mobLink} onClick={handleLinkClick}>
                     Home
-                  </ChakraLink>
+                  </Link>
                   <hr style={styles.mobRow} />
-                  <ChakraLink
+                  <Link
                     href="#expertise"
                     sx={styles.mobLink}
                     onClick={handleLinkClick}
                   >
                     Expertise
-                  </ChakraLink>
+                  </Link>
                   <hr style={styles.mobRow} />
-                  <ChakraLink
-                    href="#"
+                  <Link
+                    href="#aboutme"
                     sx={styles.mobLink}
                     onClick={handleLinkClick}
                   >
                     About Me
-                  </ChakraLink>
+                  </Link>
                   <hr style={styles.mobRow} />
-                  <ChakraLink
-                    href="#"
+                  <Link
+                    href="https://devsavant.hashnode.dev/"
                     sx={styles.mobLink}
                     onClick={handleLinkClick}
                   >
                     Blogs
-                  </ChakraLink>
+                  </Link>
                   <hr style={styles.mobRow} />
                   <ChakraLink
-                    href="#"
-                    sx={styles.mobLink}
-                    onClick={handleLinkClick}
+                    href="/resume.pdf"
+                    download="kishor-kunal-resume.pdf"
+                    sx={styles.deskLink}
                   >
                     Resume
                   </ChakraLink>
@@ -171,7 +172,9 @@ function Nav() {
 
           {/* Contact Button */}
           <Box display={{ base: "none", md: "block" }}>
-            <button className="btn-outline">Contact Me</button>
+            <Link href="#contactme">
+              <button className="btn-outline">Contact Me</button>
+            </Link>
           </Box>
         </Flex>
       </Container>

@@ -55,7 +55,7 @@ function PortfolioCard({
 
 function Portfolio() {
   return (
-    <Container maxW="1200" mt="3rem" mb="3rem">
+    <Container maxW="1200" mt="3rem" mb="3rem" id="portfolio">
       <Text fontWeight="600" color="#282938" pb="10px">
         Recent Projects
       </Text>

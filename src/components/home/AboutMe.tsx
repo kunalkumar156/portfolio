@@ -3,7 +3,7 @@ import React from "react";
 
 function AboutMe() {
   return (
-    <Container maxW="1200" mb="3rem">
+    <Container maxW="1200" mb="3rem" id="aboutme">
       <Flex
         direction={{ base: "column", md: "row" }}
         alignItems={{ base: "center", md: "center" }}

@@ -62,7 +62,11 @@ function MySkills({
 function Expertise() {
   return (
     <>
-      <Container maxW="1200" padding={{ base: "1rem", md: "3rem 0" }}>
+      <Container
+        maxW="1200"
+        padding={{ base: "1rem", md: "3rem 0" }}
+        id="expertise"
+      >
         <Text fontWeight="600" color="#282938" pb={{ base: "6", md: "10px" }}>
           My Skills
         </Text>

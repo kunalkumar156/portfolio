@@ -31,7 +31,7 @@ function Details({ detailType }: { detailType: string }) {
 
 function ContactMe() {
   return (
-    <Container maxW="1200" padding="3rem 0">
+    <Container maxW="1200" padding="3rem 0" id="contactme">
       <Flex alignItems="center" justifyContent="center" direction="column">
         <Text fontWeight="600" color="#282938" pb="10px">
           Get In Touch

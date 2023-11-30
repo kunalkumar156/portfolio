@@ -79,7 +79,7 @@ function ReviewBox({
 
 function Testimonials() {
   return (
-    <Box backgroundColor="#F5FCFF">
+    <Box backgroundColor="#F5FCFF" id="testimonials">
       <Container
         maxW={{ base: "100%", md: 1200 }}
         mt="3rem"

@@ -22,7 +22,7 @@ const styles = {
 
 function Footer() {
   return (
-    <Box background="#F5FCFF" mt="3rem" mb="4rem">
+    <Box background="#F5FCFF" mt="3rem" mb="4rem" id="footer">
       <Container maxW="1200" p={{ base: "1rem", md: "3rem 0rem" }}>
         <Flex
           justify="space-between"
@@ -47,7 +47,7 @@ function Footer() {
             <ChakraLink href="#" sx={styles.deskLink}>
               Home
             </ChakraLink>
-            <ChakraLink href="#" sx={styles.deskLink}>
+            <ChakraLink href="#portfolio" sx={styles.deskLink}>
               Portfolio
             </ChakraLink>
             <ChakraLink href="#" sx={styles.deskLink}>

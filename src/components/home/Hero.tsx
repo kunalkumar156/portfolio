@@ -1,4 +1,4 @@
-import { Container, Flex, Box, Text, Image } from "@chakra-ui/react";
+import { Container, Flex, Box, Text, Image, Link } from "@chakra-ui/react";
 import React from "react";
 
 function Hero() {
@@ -52,7 +52,9 @@ function Hero() {
               </Text>
             </Text>
 
-            <button className="opposite-button">Get In Touch</button>
+            <Link href="#contactme">
+              <button className="opposite-button">Get In Touch</button>
+            </Link>
           </Box>
 
           <Box width="100%">
