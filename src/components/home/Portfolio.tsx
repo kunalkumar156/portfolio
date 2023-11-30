@@ -53,7 +53,10 @@ function PortfolioCard({
           </button>
 
           <button className="arrow-button">
-            {link2} <RxArrowTopRight color="#006B6A" />
+            <a href={link2} target="_blank" rel="noopener noreferrer">
+              View Project
+            </a>{" "}
+            <RxArrowTopRight color="#006B6A" />
           </button>
         </Flex>
       </Box>
@@ -83,7 +86,7 @@ function Portfolio() {
           heading="Natours"
           para="Natours is a nature tour packages website, providing a platform for users to explore and book various nature tours."
           link="https://github.com/kunalkumar156/Natours-Exciting-tours-for-adventrous-peoples-"
-          link2="View Project"
+          link2="https://natours-exciting-tours-for-adventrous-peoples.vercel.app/"
           isGitHubDisabled={false}
         />
         <PortfolioCard
@@ -92,7 +95,7 @@ function Portfolio() {
           heading="Asva Ventures"
           para="Asva Ventures is a web 3 related platform that explores the latest advancements in web technologies."
           link="Github"
-          link2="View Project"
+          link2="https://asvaventures.com/"
           isGitHubDisabled={true}
         />
         <PortfolioCard
