@@ -42,7 +42,13 @@ function PortfolioCard({
           gap={{ base: 4, md: 8 }}
         >
           <button className="arrow-button" disabled={isGitHubDisabled}>
-            {isGitHubDisabled ? "Private Repo" : link}
+            {isGitHubDisabled ? (
+              "Private Repo"
+            ) : (
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            )}
             <RxArrowTopRight color="#006B6A" />
           </button>
 
@@ -76,7 +82,7 @@ function Portfolio() {
           image="natours.png"
           heading="Natours"
           para="Natours is a nature tour packages website, providing a platform for users to explore and book various nature tours."
-          link="Github"
+          link="https://github.com/kunalkumar156/Natours-Exciting-tours-for-adventrous-peoples-"
           link2="View Project"
           isGitHubDisabled={false}
         />
@@ -94,7 +100,7 @@ function Portfolio() {
           image="newsmonkey.png"
           heading="News Monkey"
           para="News Monkey is a comprehensive news platform that delivers the latest and most relevant news to its users."
-          link="Github"
+          link="https://github.com/kunalkumar156/Natours-Exciting-tours-for-adventrous-peoples-"
           link2="View Project"
           isGitHubDisabled={false}
         />
