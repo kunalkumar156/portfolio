@@ -3,8 +3,9 @@ import Expertise from "@/components/home/Expertise";
 import AboutMe from "@/components/home/AboutMe";
 import Head from "next/head";
 import Portfolio from "@/components/home/Portfolio";
-import Testimonials from "@/components/home/Testimonials";
+import Testimonials from "@/components/home/Blogs";
 import ContactMe from "@/components/home/ContactMe";
+import Blogs from "@/components/home/Blogs";
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
       <Expertise />
       <AboutMe />
       <Portfolio />
-      <Testimonials />
+      <Blogs />
       <ContactMe />
     </>
   );

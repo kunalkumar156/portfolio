@@ -97,7 +97,7 @@ function Nav() {
             <Link href="#aboutme" sx={styles.deskLink}>
               About Me
             </Link>
-            <Link href="https://devsavant.hashnode.dev/" sx={styles.deskLink}>
+            <Link href="#blogs" sx={styles.deskLink}>
               Blogs
             </Link>
             <ChakraLink
@@ -150,7 +150,7 @@ function Nav() {
                   </Link>
                   <hr style={styles.mobRow} />
                   <Link
-                    href="https://devsavant.hashnode.dev/"
+                    href="#blogs"
                     sx={styles.mobLink}
                     onClick={handleLinkClick}
                   >

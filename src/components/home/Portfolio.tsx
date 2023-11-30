@@ -21,7 +21,7 @@ function PortfolioCard({
       boxShadow="0px 0px 16px 0px rgba(0, 0, 0, 0.15)"
       mb="3"
     >
-      <Image borderRadius="8px" src={image} alt={heading} />
+      <Image borderTopRadius="8px" src={image} alt={heading} />
       <Box padding={{ base: 4, md: 5 }}>
         <Text
           fontSize={{ base: "18px", md: "20px" }}

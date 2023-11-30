@@ -64,7 +64,8 @@
   color: #5e3bee;
 }
 
-.arrow-button {
+.arrow-button,
+.arrow-button:disabled {
   gap: 10px;
   display: inline-flex;
   align-items: center;
@@ -82,6 +83,11 @@
 .arrow-button:hover {
   color: #5e3bee;
   transform: color 0.3s ease;
+}
+
+.arrow-button:disabled {
+  color: #a0aec0;
+  cursor: not-allowed;
 }
 
 .arrow-button::before {
