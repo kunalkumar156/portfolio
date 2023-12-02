@@ -1,5 +1,5 @@
-import { Container, Text, Box, Flex, Input, Checkbox } from "@chakra-ui/react";
-import React from "react";
+import { Container, Text, Box, Flex, Input, Textarea } from "@chakra-ui/react";
+import React, { useState } from "react";
 
 const boxStyles = {
   boxDetail: {
@@ -30,6 +30,18 @@ function Details({ detailType }: { detailType: string }) {
 }
 
 function ContactMe() {
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e: { target: { value: any } }) => {
+    const inputValue = e.target.value;
+
+    if (inputValue.length <= 500) {
+      setMessage(inputValue);
+    }
+  };
+
+  const characterCount = message.length;
+
   return (
     <Container maxW="1200" padding="2rem 0" id="contactme">
       <Flex alignItems="center" justifyContent="center" direction="column">
@@ -75,12 +87,27 @@ function ContactMe() {
       <Box margin={{ base: "30px", md: "0" }}>
         <Flex justify="center" align="center" flexDirection="column">
           <Box width={{ base: "100%", md: "53.4%" }} mb="1.5rem">
-            <Text sx={{ ...boxStyles.text }}>Choose A Topic</Text>
+            <Text sx={{ ...boxStyles.text }}>Explain Your Topic Berifly</Text>
             <Input sx={boxStyles.boxDetail} />
           </Box>
           <Box width={{ base: "100%", md: "53.4%" }} mb="2rem">
             <Text sx={boxStyles.text}>Message</Text>
-            <Input sx={boxStyles.boxDetail} />
+            <Textarea
+              value={message}
+              onChange={handleChange}
+              sx={{
+                ...boxStyles.boxDetail,
+                height: { base: "80px", md: "100px" },
+                maxLength: "500",
+              }}
+            />
+            <Text
+              mt={2}
+              fontSize="14px"
+              color={characterCount > 500 ? "red" : "inherit"}
+            >
+              Character Count: {characterCount}/500
+            </Text>
           </Box>
           <button className="opposite-button">Submit</button>
         </Flex>
