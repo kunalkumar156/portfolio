@@ -100,6 +100,34 @@ function Blogs() {
           direction={{ base: "column", md: "row" }}
           alignItems={{ base: "center", md: "flex-start" }}
           gap={{ base: "2", md: "8" }}
+          className="mb-8"
+        >
+          <BlogBox
+            key="blog1"
+            blogTitle="AURA UI - A COMPONENT LIBRARY"
+            blogLink="https://devsavant.hashnode.dev/auraui-component-library-crafting-seamless-frontend-experiences"
+            blogImage="auraui.avif"
+            blogDescription="Design elegant React sites fast with Aura UI’s advanced component library."
+          />
+          <BlogBox
+            key="blog2"
+            blogTitle="BACKEND DEVLOPMENT BASICS"
+            blogLink="https://devsavant.hashnode.dev/backend-development-basics-an-overview"
+            blogImage="backend.avif"
+            blogDescription="Unlock the basics of backend development and start building powerful applications from the ground up."
+          />
+          <BlogBox
+            key="blog3"
+            blogTitle="DSA SHORT NOTES"
+            blogLink="https://devsavant.hashnode.dev/data-structures-and-algorithms-simplified-your-quick-guide-to-key-concepts"
+            blogImage="dsa.avif"
+            blogDescription="Data Structures And Algorithms Simplified: Your Quick Guide to Key Concepts"
+          />
+        </Flex>
+        <Flex
+          direction={{ base: "column", md: "row" }}
+          alignItems={{ base: "center", md: "flex-start" }}
+          gap={{ base: "2", md: "8" }}
         >
           <BlogBox
             key="blog1"

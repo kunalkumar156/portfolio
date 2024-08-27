@@ -22,7 +22,7 @@ const styles = {
 
 function Footer() {
   return (
-    <Box background="#F5FCFF" mt="3rem" mb="4rem" id="footer">
+    <Box background="#F5FCFF" mt="3rem" id="footer">
       <Container maxW="1200" p={{ base: "1rem", md: "3rem 0rem" }}>
         <Flex
           justify="space-between"

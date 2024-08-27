@@ -26,24 +26,25 @@ function AboutMe() {
             fontWeight="700"
             pb="20px"
           >
-            Hi, I&apos;m Kunal
+            Kunal here
           </Text>
           <Text color="#1C1E53">
             I&apos;m a web developer specializing in front-end technologies with
             a diverse set of skills and experiences. My journey in web
-            development has been enriched by working with various tools and
-            frameworks.
+            development has been enriched by working with various tools,
+            frameworks, and component library that i am building - AuraUI.
             <Text color="#1c1e53" paddingTop="20px">
               I am well-versed in building responsive and accessible user
-              interfaces using Chakra UI and Material-UI. My proficiency extends
-              to collaborating with design teams, where I leverage tools like
-              Figma and Canva to bring creative concepts to life.
+              interfaces using AuraUI, Chakra UI, and Material-UI. My
+              proficiency extends to collaborating with design teams, where I
+              leverage tools like Figma and Canva to bring creative concepts to
+              life.
             </Text>
             <Text color="#1c1e53" paddingTop="20px">
               In addition, I am comfortable working in a Linux environment,
               ensuring smooth development workflows. I am always eager to
-              explore new technologies and frameworks to enhance my skills and
-              deliver high-quality web applications.
+              explore new technologies and frameworks, including AuraUI, to
+              enhance my skills and deliver high-quality web applications.
             </Text>
           </Text>
         </Box>

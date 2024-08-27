@@ -43,17 +43,6 @@ function PortfolioCard({
           align="center"
           gap={{ base: 4, md: 8 }}
         >
-          <button className="arrow-button" disabled={isGitHubDisabled}>
-            {isGitHubDisabled ? (
-              "Private Repo"
-            ) : (
-              <a href={link} target="_blank" rel="noopener noreferrer">
-                GitHub
-              </a>
-            )}
-            <RxArrowTopRight color="#006B6A" />
-          </button>
-
           <button className="arrow-button" disabled={isProjectDisabled}>
             {isProjectDisabled ? (
               "On Development"
@@ -63,6 +52,16 @@ function PortfolioCard({
               </a>
             )}
 
+            <RxArrowTopRight color="#006B6A" />
+          </button>
+          <button className="arrow-button" disabled={isGitHubDisabled}>
+            {isGitHubDisabled ? (
+              "Private Repo"
+            ) : (
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            )}
             <RxArrowTopRight color="#006B6A" />
           </button>
         </Flex>
@@ -89,6 +88,27 @@ function Portfolio() {
       <Flex direction={{ base: "column", md: "row" }} gap={{ base: 5, md: 8 }}>
         <PortfolioCard
           key="first project"
+          image="auraui.png"
+          heading="AuraUI"
+          para="AuraUI is a high-performance component library for building stunning and responsive React websites with ease."
+          link="https://github.com/Shubham0850/auraui"
+          link2="https://www.auraui.com/"
+          isGitHubDisabled={false}
+          isProjectDisabled={false}
+        />
+
+        <PortfolioCard
+          key="first project"
+          image="asvaventures.png"
+          heading="Asva Ventures"
+          para="Asva Ventures is a web 3 related platform that explores the latest advancements in web technologies. It is a freelance project done by me."
+          link=""
+          link2="https://asvaventures.com/"
+          isGitHubDisabled={true}
+          isProjectDisabled={false}
+        />
+        <PortfolioCard
+          key="second project"
           image="natours.png"
           heading="Natours"
           para="Natours is a nature tour packages website, providing a platform for users to explore and book various nature tours."
@@ -96,26 +116,6 @@ function Portfolio() {
           link2="https://natours-exciting-tours-for-adventrous-peoples.vercel.app/"
           isGitHubDisabled={false}
           isProjectDisabled={false}
-        />
-        <PortfolioCard
-          key="second project"
-          image="asvaventures.png"
-          heading="Asva Ventures"
-          para="Asva Ventures is a web 3 related platform that explores the latest advancements in web technologies."
-          link=""
-          link2="https://asvaventures.com/"
-          isGitHubDisabled={true}
-          isProjectDisabled={false}
-        />
-        <PortfolioCard
-          key="third project"
-          image="newsmonkey.png"
-          heading="News Monkey"
-          para="News Monkey is a comprehensive news platform that delivers the latest and most relevant news to its users."
-          link="https://github.com/kunalkumar156/News_Monkey-React-App"
-          link2="View Project"
-          isGitHubDisabled={false}
-          isProjectDisabled={true}
         />
       </Flex>
     </Container>

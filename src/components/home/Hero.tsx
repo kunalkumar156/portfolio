@@ -60,7 +60,7 @@ function Hero() {
           <Box width="100%">
             <Image
               bg="#F5FCFF"
-              src="heroImage.png"
+              src="heroillustration.png"
               alt="hero Image"
               mb={{ base: "2rem", md: 0 }}
             />

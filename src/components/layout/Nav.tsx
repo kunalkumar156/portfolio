@@ -100,13 +100,13 @@ function Nav() {
             <Link href="#blogs" sx={styles.deskLink}>
               Blogs
             </Link>
-            <ChakraLink
+            <Link
               href="/resume.pdf"
               download="kishor-kunal-resume.pdf"
               sx={styles.deskLink}
             >
               Resume
-            </ChakraLink>
+            </Link>
           </Flex>
 
           {/* Drawer for mobile */}
@@ -160,7 +160,7 @@ function Nav() {
                   <ChakraLink
                     href="/resume.pdf"
                     download="kishor-kunal-resume.pdf"
-                    sx={styles.deskLink}
+                    sx={styles.mobLink}
                   >
                     Resume
                   </ChakraLink>

@@ -31,6 +31,7 @@ function Details({ detailType }: { detailType: string }) {
 
 function ContactMe() {
   const [message, setMessage] = useState("");
+  // const [submitStatus, setSubmitStatus] = useState("unsubmitted");b
 
   const handleChange = (e: { target: { value: any } }) => {
     const inputValue = e.target.value;
@@ -39,6 +40,21 @@ function ContactMe() {
       setMessage(inputValue);
     }
   };
+
+  // const handleSubmission = async () => {
+  //   try {
+  //     await sendEmail({
+  //       to: "yoyokunal156@gmail.com",
+  //       subject: "Contact Form Submission",
+  //       body: `First Name: ${firstNameValue}\nLast Name: ${lastNameValue}\nEmail: ${emailValue}\nPhone Number: ${phoneValue}\nTopic: ${topicValue}\nMessage: ${message}`,
+  //     });
+
+  //     setSubmitStatus("success");
+  //   } catch (error) {
+  //     console.error("Error sending email:", error);
+  //     setSubmitStatus("error");
+  //   }
+  // };
 
   const characterCount = message.length;
 
