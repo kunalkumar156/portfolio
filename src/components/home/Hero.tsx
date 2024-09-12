@@ -21,7 +21,7 @@ function Hero() {
               lineHeight="150%"
               pb="12px"
             >
-              Hi, I&apos;m Kunal
+              Hi, I&apos;m Kishor Kunal
             </Text>
             <Text
               color="#282938"
