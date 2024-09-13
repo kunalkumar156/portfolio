@@ -1,5 +1,8 @@
-import { Container, Text, Box, Flex, Input, Textarea } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { Container, Text, Box, Flex, Input, Textarea } from "@chakra-ui/react";
+import emailjs from "emailjs-com";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const boxStyles = {
   boxDetail: {
@@ -20,43 +23,105 @@ const boxStyles = {
   },
 };
 
-function Details({ detailType }: { detailType: string }) {
+function Details({
+  detailType,
+  value,
+  onChange,
+  name,
+}: {
+  detailType: string;
+  value?: string;
+  onChange?: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => void;
+  name?: string;
+}) {
   return (
     <Box width={{ base: "100%", md: "25%" }}>
       <Text sx={boxStyles.text}>{detailType}</Text>
-      <Input sx={boxStyles.boxDetail} />
+      <Input
+        sx={boxStyles.boxDetail}
+        value={value}
+        onChange={onChange}
+        name={name} // Added name attribute
+      />
     </Box>
   );
 }
 
 function ContactMe() {
-  const [message, setMessage] = useState("");
-  // const [submitStatus, setSubmitStatus] = useState("unsubmitted");b
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    topic: "",
+    message: "",
+  });
+  const [characterCount, setCharacterCount] = useState(0);
 
-  const handleChange = (e: { target: { value: any } }) => {
-    const inputValue = e.target.value;
-
-    if (inputValue.length <= 500) {
-      setMessage(inputValue);
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+    if (name === "message") {
+      setCharacterCount(value.length);
     }
   };
 
-  // const handleSubmission = async () => {
-  //   try {
-  //     await sendEmail({
-  //       to: "yoyokunal156@gmail.com",
-  //       subject: "Contact Form Submission",
-  //       body: `First Name: ${firstNameValue}\nLast Name: ${lastNameValue}\nEmail: ${emailValue}\nPhone Number: ${phoneValue}\nTopic: ${topicValue}\nMessage: ${message}`,
-  //     });
+  const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
 
-  //     setSubmitStatus("success");
-  //   } catch (error) {
-  //     console.error("Error sending email:", error);
-  //     setSubmitStatus("error");
-  //   }
-  // };
+  const validatePhone = (phone: string) => {
+    const re = /^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$/; // Indian phone number regex
+    return re.test(phone);
+  };
 
-  const characterCount = message.length;
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Validate fields
+    if (!validateEmail(formData.email)) {
+      toast.error("Invalid email address");
+      return;
+    }
+
+    if (!validatePhone(formData.phoneNumber)) {
+      toast.error("Invalid phone number");
+      return;
+    }
+
+    // Send email
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        e.currentTarget,
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID!,
+      )
+      .then(
+        (result) => {
+          toast.success("Message sent successfully!");
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phoneNumber: "",
+            topic: "",
+            message: "",
+          });
+        },
+        (error) => {
+          toast.error("Failed to send message. Please try again later.");
+        },
+      );
+  };
 
   return (
     <Container maxW="1200" padding="2rem 0" id="contactme">
@@ -80,54 +145,89 @@ function ContactMe() {
       </Flex>
 
       <Box marginTop={10} margin={{ base: "30px", md: "0" }}>
-        <Flex
-          justifyContent="center"
-          flexWrap="wrap"
-          gap={{ base: 5, md: 10 }}
-          mb="1.5rem"
-        >
-          <Details key="first detail" detailType="First Name" />
-          <Details key="second detail" detailType="Last Name" />
-        </Flex>
-        <Flex
-          justifyContent="center"
-          flexWrap="wrap"
-          gap={{ base: 5, md: 10 }}
-          mb="1.5rem"
-        >
-          <Details key="third detail" detailType="Email" />
-          <Details key="fourth detail" detailType="Phone Number" />
-        </Flex>
+        <form onSubmit={handleSubmit}>
+          <Flex
+            justifyContent="center"
+            flexWrap="wrap"
+            gap={{ base: 5, md: 10 }}
+            mb="1.5rem"
+          >
+            <Details
+              key="first detail"
+              detailType="First Name"
+              value={formData.firstName}
+              onChange={handleChange}
+              name="firstName"
+            />
+            <Details
+              key="second detail"
+              detailType="Last Name"
+              value={formData.lastName}
+              onChange={handleChange}
+              name="lastName"
+            />
+          </Flex>
+          <Flex
+            justifyContent="center"
+            flexWrap="wrap"
+            gap={{ base: 5, md: 10 }}
+            mb="1.5rem"
+          >
+            <Details
+              key="third detail"
+              detailType="Email"
+              value={formData.email}
+              onChange={handleChange}
+              name="email"
+            />
+            <Details
+              key="fourth detail"
+              detailType="Phone Number"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+              name="phoneNumber"
+            />
+          </Flex>
+          <Box >
+            <Flex justify="center" align="center" flexDirection="column">
+              <Box width={{ base: "100%", md: "53.4%" }} mb="1.5rem">
+                <Text sx={boxStyles.text}>Explain Your Topic Briefly</Text>
+                <Input
+                  sx={boxStyles.boxDetail}
+                  value={formData.topic}
+                  onChange={handleChange}
+                  name="topic"
+                />
+              </Box>
+              <Box width={{ base: "100%", md: "53.4%" }} mb="2rem">
+                <Text sx={boxStyles.text}>Message</Text>
+                <Textarea
+                  value={formData.message}
+                  onChange={handleChange}
+                  sx={{
+                    ...boxStyles.boxDetail,
+                    height: { base: "80px", md: "100px" },
+                    maxLength: "500",
+                  }}
+                  name="message"
+                />
+                <Text
+                  mt={2}
+                  fontSize="14px"
+                  color={characterCount > 500 ? "red" : "inherit"}
+                >
+                  Character Count: {characterCount}/500
+                </Text>
+              </Box>
+              <button type="submit" className="opposite-button">
+                Submit
+              </button>
+            </Flex>
+          </Box>
+        </form>
       </Box>
 
-      <Box margin={{ base: "30px", md: "0" }}>
-        <Flex justify="center" align="center" flexDirection="column">
-          <Box width={{ base: "100%", md: "53.4%" }} mb="1.5rem">
-            <Text sx={{ ...boxStyles.text }}>Explain Your Topic Berifly</Text>
-            <Input sx={boxStyles.boxDetail} />
-          </Box>
-          <Box width={{ base: "100%", md: "53.4%" }} mb="2rem">
-            <Text sx={boxStyles.text}>Message</Text>
-            <Textarea
-              value={message}
-              onChange={handleChange}
-              sx={{
-                ...boxStyles.boxDetail,
-                height: { base: "80px", md: "100px" },
-                maxLength: "500",
-              }}
-            />
-            <Text
-              mt={2}
-              fontSize="14px"
-              color={characterCount > 500 ? "red" : "inherit"}
-            >
-              Character Count: {characterCount}/500
-            </Text>
-          </Box>
-          <button className="opposite-button">Submit</button>
-        </Flex>
-      </Box>
+      <ToastContainer />
     </Container>
   );
 }
