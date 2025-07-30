@@ -1,20 +1,7 @@
-import {
-  Container,
-  Text,
-  Box,
-  Flex,
-  Image,
-  Link as ChakraLink,
-} from "@chakra-ui/react";
-import React from "react";
+"use client";
 
-const styles = {
-  deskLink: {
-    _hover: {
-      textDecoration: "none",
-    },
-  },
-};
+import React from "react";
+import Image from "next/image";
 
 function BlogBox({
   blogTitle,
@@ -28,80 +15,44 @@ function BlogBox({
   blogDescription: string;
 }) {
   return (
-    <Box
-      borderRadius="8px"
-      boxShadow="0px 0px 16px 0px rgba(0, 0, 0, 0.15)"
-      mb={{ base: "2rem", md: "0" }}
-    >
-      <Box>
-        <Flex
-          alignItems={{ base: "flex-start", md: "center" }}
-          flexDirection="column"
-          gap={{ base: 3, md: 8 }}
+    <div className="rounded-lg shadow-md bg-white mb-8 md:mb-0 overflow-hidden hover:shadow-lg transition-shadow duration-300 w-full md:w-1/3">
+      <a href={blogLink} target="_blank" rel="noopener noreferrer">
+        <Image
+          src={`/${blogImage}`}
+          alt="blog image"
+          width={400}
+          height={250}
+          className="w-full rounded-t-lg object-cover"
+        />
+      </a>
+      <div className="p-4 text-center">
+        <a
+          href={blogLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="arrow-button text-[#282938] font-semibold text-lg md:text-xl block hover:no-underline"
         >
-          <ChakraLink href={blogLink} target="_blank" rel="noopener noreferrer">
-            <Image
-              borderTopRadius="8px"
-              src={blogImage}
-              alt="blog image"
-              mb={{ base: "2", md: "-6" }}
-            />
-          </ChakraLink>
-          <Box padding="1rem" textAlign="center">
-            <ChakraLink
-              className="arrow-button"
-              href={blogLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              color="#282938"
-              fontWeight="600"
-              fontSize={{ base: "18px", md: "20px" }}
-              sx={styles.deskLink}
-              mb="2"
-            >
-              {blogTitle}
-            </ChakraLink>
-            <Text
-              fontSize={{ base: "12px", md: "14px" }}
-              color="#1C1E53"
-              mb="2"
-            >
-              {blogDescription}
-            </Text>
-          </Box>
-        </Flex>
-      </Box>
-    </Box>
+          {blogTitle}
+        </a>
+        <p className="text-sm md:text-base text-[#1C1E53] mt-2">
+          {blogDescription}
+        </p>
+      </div>
+    </div>
   );
 }
 
 function Blogs() {
   return (
-    <Box backgroundColor="#F5FCFF" id="blogs">
-      <Container
-        maxW={{ base: "100%", md: 1200 }}
-        mt="3rem"
-        mb="3rem"
-        padding={{ base: "2rem", md: "8rem 0rem" }}
-      >
-        <Text fontWeight="600" color="#282938" pb={{ base: "6", md: "10px" }}>
-          Blogs
-        </Text>
-        <Text
-          color="#282938"
-          fontSize={{ base: "32px", md: "40px" }}
-          fontWeight="700"
-          pb={{ base: "2rem", md: "3rem" }}
-        >
+    <section className="bg-[#F5FCFF] py-12 md:py-24" id="blogs">
+      <div className="max-w-6xl mx-auto px-6">
+        <p className="font-semibold text-[#282938] mb-2">Blogs</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#282938] mb-12">
           Explore My Recent Blogs
-        </Text>
+        </h2>
 
-        <Flex
-          direction={{ base: "column", md: "row" }}
-          alignItems={{ base: "center", md: "flex-start" }}
-          gap={{ base: "2", md: "8" }}
-          className="mb-8"
-        >
+        {/* First row */}
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
           <BlogBox
             key="blog1"
             blogTitle="AURA UI - A COMPONENT LIBRARY"
@@ -123,36 +74,34 @@ function Blogs() {
             blogImage="dsa.avif"
             blogDescription="Data Structures And Algorithms Simplified: Your Quick Guide to Key Concepts"
           />
-        </Flex>
-        <Flex
-          direction={{ base: "column", md: "row" }}
-          alignItems={{ base: "center", md: "flex-start" }}
-          gap={{ base: "2", md: "8" }}
-        >
+        </div>
+
+        {/* Second row */}
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
           <BlogBox
-            key="blog1"
+            key="blog4"
             blogTitle="THE BLOCKCHAIN"
             blogLink="https://devsavant.hashnode.dev/the-blockchain"
             blogImage="blog1.avif"
             blogDescription="Demystifying Blockchain: A Concise Introduction And Easy-to-Understand Guide"
           />
           <BlogBox
-            key="blog2"
+            key="blog5"
             blogTitle="HISTORY OF WEB DEVELOPMENT"
             blogLink="https://devsavant.hashnode.dev/history-of-web-development"
             blogImage="blog2.avif"
             blogDescription="Web Development Evolution: Tracing the Historical Milestones"
           />
           <BlogBox
-            key="blog3"
+            key="blog6"
             blogTitle="BIG O NOTATION"
             blogLink="https://devsavant.hashnode.dev/simplified-guide-to-big-o-notation-making-algorithms-easier-to-understand"
             blogImage="blog3.avif"
             blogDescription="Simplified Guide to Big O Notation: Making Algorithms Easier to Understand"
           />
-        </Flex>
-      </Container>
-    </Box>
+        </div>
+      </div>
+    </section>
   );
 }
 

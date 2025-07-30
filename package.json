@@ -9,16 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.8.2",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^10.16.5",
+    "lucide-react": "^0.534.0",
     "next": "^14.0.3",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
-    "react-toastify": "^10.0.5"
+    "react-remove-scroll-bar": "^2.3.8",
+    "react-style-singleton": "^2.2.3",
+    "react-toastify": "^10.0.5",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",

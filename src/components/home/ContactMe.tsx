@@ -1,53 +1,12 @@
+"use client";
+
 import React, { useState } from "react";
-import { Container, Text, Box, Flex, Input, Textarea } from "@chakra-ui/react";
 import emailjs from "emailjs-com";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const boxStyles = {
-  boxDetail: {
-    fontSize: { base: "12px", md: "14px" },
-    color: "#282938",
-    padding: "10px",
-    border: "1px solid #5E3BEE",
-    borderRadius: "8px",
-    transition: "border-color 0.3s ease",
-    _hover: {
-      borderColor: "#5E3BEE",
-    },
-  },
-  text: {
-    fontSize: { base: "12px", md: "14px" },
-    color: "#282938",
-    marginBottom: "5px",
-  },
-};
-
-function Details({
-  detailType,
-  value,
-  onChange,
-  name,
-}: {
-  detailType: string;
-  value?: string;
-  onChange?: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => void;
-  name?: string;
-}) {
-  return (
-    <Box width={{ base: "100%", md: "25%" }}>
-      <Text sx={boxStyles.text}>{detailType}</Text>
-      <Input
-        sx={boxStyles.boxDetail}
-        value={value}
-        onChange={onChange}
-        name={name} // Added name attribute
-      />
-    </Box>
-  );
-}
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 function ContactMe() {
   const [formData, setFormData] = useState({
@@ -79,14 +38,13 @@ function ContactMe() {
   };
 
   const validatePhone = (phone: string) => {
-    const re = /^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$/; // Indian phone number regex
+    const re = /^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$/; // adjust if not India-specific
     return re.test(phone);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Validate fields
     if (!validateEmail(formData.email)) {
       toast.error("Invalid email address");
       return;
@@ -97,7 +55,6 @@ function ContactMe() {
       return;
     }
 
-    // Send email
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
@@ -106,7 +63,7 @@ function ContactMe() {
         process.env.NEXT_PUBLIC_EMAILJS_USER_ID!,
       )
       .then(
-        (result) => {
+        () => {
           toast.success("Message sent successfully!");
           setFormData({
             firstName: "",
@@ -116,119 +73,128 @@ function ContactMe() {
             topic: "",
             message: "",
           });
+          setCharacterCount(0);
         },
-        (error) => {
+        () => {
           toast.error("Failed to send message. Please try again later.");
         },
       );
   };
 
   return (
-    <Container maxW="1200" padding="2rem 0" id="contactme">
-      <Flex alignItems="center" justifyContent="center" direction="column">
-        <Text fontWeight="600" color="#282938" pb="10px">
-          Get In Touch
-        </Text>
-        <Text
-          color="#282938"
-          fontSize={{ base: "32px", md: "40px" }}
-          fontWeight="700"
-          pb="20px"
-        >
+    <section id="contactme" className="max-w-6xl mx-auto px-6 py-16">
+      <div className="flex flex-col items-center text-center mb-10">
+        <p className="font-semibold text-[#282938] mb-2">Get In Touch</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#282938] mb-4">
           Contact Me
-        </Text>
-        <Text textAlign="center" width={{ base: "90%", md: "50%" }} mb="10">
+        </h2>
+        <p className="text-[#282938] max-w-2xl">
           If you have any questions, project inquiries, or just want to say
           hello, feel free to reach out. I&apos;m here to help and excited to
           connect with you!
-        </Text>
-      </Flex>
+        </p>
+      </div>
 
-      <Box marginTop={10} margin={{ base: "30px", md: "0" }}>
-        <form onSubmit={handleSubmit}>
-          <Flex
-            justifyContent="center"
-            flexWrap="wrap"
-            gap={{ base: 5, md: 10 }}
-            mb="1.5rem"
-          >
-            <Details
-              key="first detail"
-              detailType="First Name"
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col items-center gap-6"
+      >
+        {/* Row 1 */}
+        <div className="flex flex-col md:flex-row gap-6 w-full md:w-3/4">
+          <div className="flex flex-col w-full">
+            <label className="text-sm font-medium text-[#282938] mb-1">
+              First Name
+            </label>
+            <Input
+              name="firstName"
               value={formData.firstName}
               onChange={handleChange}
-              name="firstName"
+              className="border-[#5E3BEE] focus:ring-2 focus:ring-[#5E3BEE] rounded-md"
             />
-            <Details
-              key="second detail"
-              detailType="Last Name"
+          </div>
+          <div className="flex flex-col w-full">
+            <label className="text-sm font-medium text-[#282938] mb-1">
+              Last Name
+            </label>
+            <Input
+              name="lastName"
               value={formData.lastName}
               onChange={handleChange}
-              name="lastName"
+              className="border-[#5E3BEE] focus:ring-2 focus:ring-[#5E3BEE] rounded-md"
             />
-          </Flex>
-          <Flex
-            justifyContent="center"
-            flexWrap="wrap"
-            gap={{ base: 5, md: 10 }}
-            mb="1.5rem"
-          >
-            <Details
-              key="third detail"
-              detailType="Email"
+          </div>
+        </div>
+
+        {/* Row 2 */}
+        <div className="flex flex-col md:flex-row gap-6 w-full md:w-3/4">
+          <div className="flex flex-col w-full">
+            <label className="text-sm font-medium text-[#282938] mb-1">
+              Email
+            </label>
+            <Input
+              name="email"
               value={formData.email}
               onChange={handleChange}
-              name="email"
+              className="border-[#5E3BEE] focus:ring-2 focus:ring-[#5E3BEE] rounded-md"
             />
-            <Details
-              key="fourth detail"
-              detailType="Phone Number"
+          </div>
+          <div className="flex flex-col w-full">
+            <label className="text-sm font-medium text-[#282938] mb-1">
+              Phone Number
+            </label>
+            <Input
+              name="phoneNumber"
               value={formData.phoneNumber}
               onChange={handleChange}
-              name="phoneNumber"
+              className="border-[#5E3BEE] focus:ring-2 focus:ring-[#5E3BEE] rounded-md"
             />
-          </Flex>
-          <Box >
-            <Flex justify="center" align="center" flexDirection="column">
-              <Box width={{ base: "100%", md: "53.4%" }} mb="1.5rem">
-                <Text sx={boxStyles.text}>Explain Your Topic Briefly</Text>
-                <Input
-                  sx={boxStyles.boxDetail}
-                  value={formData.topic}
-                  onChange={handleChange}
-                  name="topic"
-                />
-              </Box>
-              <Box width={{ base: "100%", md: "53.4%" }} mb="2rem">
-                <Text sx={boxStyles.text}>Message</Text>
-                <Textarea
-                  value={formData.message}
-                  onChange={handleChange}
-                  sx={{
-                    ...boxStyles.boxDetail,
-                    height: { base: "80px", md: "100px" },
-                    maxLength: "500",
-                  }}
-                  name="message"
-                />
-                <Text
-                  mt={2}
-                  fontSize="14px"
-                  color={characterCount > 500 ? "red" : "inherit"}
-                >
-                  Character Count: {characterCount}/500
-                </Text>
-              </Box>
-              <button type="submit" className="opposite-button">
-                Submit
-              </button>
-            </Flex>
-          </Box>
-        </form>
-      </Box>
+          </div>
+        </div>
 
-      <ToastContainer />
-    </Container>
+        {/* Topic */}
+        <div className="flex flex-col w-full md:w-3/4">
+          <label className="text-sm font-medium text-[#282938] mb-1">
+            Explain Your Topic Briefly
+          </label>
+          <Input
+            name="topic"
+            value={formData.topic}
+            onChange={handleChange}
+            className="border-[#5E3BEE] focus:ring-2 focus:ring-[#5E3BEE] rounded-md"
+          />
+        </div>
+
+        {/* Message */}
+        <div className="flex flex-col w-full md:w-3/4">
+          <label className="text-sm font-medium text-[#282938] mb-1">
+            Message
+          </label>
+          <Textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            className="border-[#5E3BEE] focus:ring-2 focus:ring-[#5E3BEE] rounded-md h-28"
+          />
+          <p
+            className={`text-xs mt-1 ${
+              characterCount > 500 ? "text-red-500" : "text-gray-500"
+            }`}
+          >
+            Character Count: {characterCount}/500
+          </p>
+        </div>
+
+        {/* Submit */}
+        <Button
+          type="submit"
+          className="bg-[#5E3BEE] hover:bg-[#4b2dd9] text-white rounded-full px-8 py-3 mt-4"
+        >
+          Submit
+        </Button>
+      </form>
+
+      <ToastContainer position="bottom-right" />
+    </section>
   );
 }
 

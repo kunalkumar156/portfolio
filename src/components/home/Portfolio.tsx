@@ -1,16 +1,22 @@
-import {
-  Box,
-  Container,
-  Text,
-  Image,
-  Flex,
-  SimpleGrid,
-} from "@chakra-ui/react";
-import React from "react";
-import { RxArrowTopRight } from "react-icons/rx";
-import { motion } from "framer-motion";
+"use client";
 
-const MotionBox = motion(Box);
+import React from "react";
+import { motion } from "framer-motion";
+import { RxArrowTopRight } from "react-icons/rx";
+import { Button } from "@/components/ui/button"; // shadcn button
+import { cn } from "@/lib/utils";
+
+const MotionDiv = motion.div;
+
+interface PortfolioCardProps {
+  image: string;
+  heading: string;
+  para: string;
+  link: string;
+  link2: string;
+  isGitHubDisabled?: boolean;
+  isProjectDisabled?: boolean;
+}
 
 function PortfolioCard({
   image,
@@ -20,122 +26,85 @@ function PortfolioCard({
   link2,
   isGitHubDisabled,
   isProjectDisabled,
-}: {
-  image: string;
-  heading: string;
-  para: string;
-  link: string;
-  link2: string;
-  isGitHubDisabled?: boolean;
-  isProjectDisabled?: boolean;
-}) {
+}: PortfolioCardProps) {
   return (
-    <MotionBox
-      borderRadius="16px"
-      boxShadow="0px 8px 24px rgba(0, 0, 0, 0.12)"
-      overflow="hidden"
-      bg="white"
+    <MotionDiv
+      className="rounded-2xl shadow-lg bg-white overflow-hidden"
       whileHover={{ y: -6, scale: 1.02 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
-      {/* Full screenshot image */}
-      <Image
-        src={image}
-        alt={heading}
-        w="100%"
-        maxH="400px"
-        objectFit="contain"
-        borderTopRadius="16px"
-        bg="gray.50"
-      />
+      {/* Image */}
+      <div className="bg-gray-50">
+        <img
+          src={image}
+          alt={heading}
+          className="w-full max-h-[400px] object-contain rounded-t-2xl"
+        />
+      </div>
 
-      <Box p={5}>
-        <Text fontSize="20px" fontWeight="700" mb={2} color="#282938">
-          {heading}
-        </Text>
-        <Text color="#1C1E53" fontSize="14px" mb={4} noOfLines={3}>
-          {para}
-        </Text>
+      {/* Content */}
+      <div className="p-5">
+        <h3 className="text-[20px] font-bold text-[#282938] mb-2">{heading}</h3>
+        <p className="text-sm text-[#1C1E53] mb-4 line-clamp-3">{para}</p>
 
-        {/* Cute chip buttons */}
-        <Flex gap={3} flexWrap="wrap">
-          {/* Project Link */}
-          <Box
-            as="a"
-            href={isProjectDisabled ? undefined : link2}
-            target="_blank"
-            rel="noopener noreferrer"
-            px={4}
-            py={2}
-            bg={isProjectDisabled ? "gray.100" : "teal.50"}
-            color={isProjectDisabled ? "gray.500" : "teal.700"}
-            fontSize="14px"
-            fontWeight="500"
-            borderRadius="999px"
-            display="flex"
-            alignItems="center"
-            gap={2}
-            cursor={isProjectDisabled ? "not-allowed" : "pointer"}
-            pointerEvents={isProjectDisabled ? "none" : "auto"}
-            transition="all 0.2s ease"
-            _hover={{
-              bg: isProjectDisabled ? "gray.100" : "teal.100",
-              transform: isProjectDisabled ? "none" : "translateY(-2px)",
-            }}
+        {/* Links */}
+        <div className="flex flex-wrap gap-3">
+          {/* Project */}
+          <Button
+            asChild
+            variant="outline"
+            className={cn(
+              "rounded-full text-sm font-medium flex items-center gap-2",
+              isProjectDisabled
+                ? "bg-gray-100 text-gray-500 pointer-events-none cursor-not-allowed"
+                : "bg-teal-50 text-teal-700 hover:bg-teal-100",
+            )}
           >
-            {isProjectDisabled ? "On Development" : "View Project"}
-            <RxArrowTopRight />
-          </Box>
+            <a
+              href={isProjectDisabled ? undefined : link2}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {isProjectDisabled ? "On Development" : "View Project"}
+              <RxArrowTopRight />
+            </a>
+          </Button>
 
-          {/* GitHub Link */}
-          <Box
-            as="a"
-            href={isGitHubDisabled ? undefined : link}
-            target="_blank"
-            rel="noopener noreferrer"
-            px={4}
-            py={2}
-            bg={isGitHubDisabled ? "gray.100" : "teal.50"}
-            color={isGitHubDisabled ? "gray.500" : "teal.700"}
-            fontSize="14px"
-            fontWeight="500"
-            borderRadius="999px"
-            display="flex"
-            alignItems="center"
-            gap={2}
-            cursor={isGitHubDisabled ? "not-allowed" : "pointer"}
-            pointerEvents={isGitHubDisabled ? "none" : "auto"}
-            transition="all 0.2s ease"
-            _hover={{
-              bg: isGitHubDisabled ? "gray.100" : "teal.100",
-              transform: isGitHubDisabled ? "none" : "translateY(-2px)",
-            }}
+          {/* GitHub */}
+          <Button
+            asChild
+            variant="outline"
+            className={cn(
+              "rounded-full text-sm font-medium flex items-center gap-2",
+              isGitHubDisabled
+                ? "bg-gray-100 text-gray-500 pointer-events-none cursor-not-allowed"
+                : "bg-teal-50 text-teal-700 hover:bg-teal-100",
+            )}
           >
-            {isGitHubDisabled ? "Private Repo" : "GitHub"}
-            <RxArrowTopRight />
-          </Box>
-        </Flex>
-      </Box>
-    </MotionBox>
+            <a
+              href={isGitHubDisabled ? undefined : link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {isGitHubDisabled ? "Private Repo" : "GitHub"}
+              <RxArrowTopRight />
+            </a>
+          </Button>
+        </div>
+      </div>
+    </MotionDiv>
   );
 }
 
-function Portfolio() {
+export default function Portfolio() {
   return (
-    <Container maxW="1200px" mt="4rem" mb="4rem" id="portfolio">
-      <Text fontWeight="600" color="#282938" pb="10px">
-        Recent Projects
-      </Text>
-      <Text
-        color="#282938"
-        fontSize={{ base: "32px", md: "40px" }}
-        fontWeight="700"
-        pb="3rem"
-      >
+    <section id="portfolio" className="max-w-6xl mx-auto px-6 my-16">
+      <p className="font-semibold text-[#282938] mb-2">Recent Projects</p>
+      <h2 className="text-3xl md:text-4xl font-bold text-[#282938] mb-12">
         My Portfolio
-      </Text>
+      </h2>
 
-      <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} spacing="32px">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <PortfolioCard
           image="auraui.png"
           heading="AuraUI"
@@ -172,9 +141,7 @@ function Portfolio() {
           link="https://github.com/kunalkumar156/tweaktext"
           link2="https://tweak-frontend.vercel.app/"
         />
-      </SimpleGrid>
-    </Container>
+      </div>
+    </section>
   );
 }
-
-export default Portfolio;

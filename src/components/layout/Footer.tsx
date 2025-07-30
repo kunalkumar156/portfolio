@@ -1,118 +1,109 @@
-import {
-  Container,
-  Box,
-  Flex,
-  Image,
-  Link,
-  Text,
-  Link as ChakraLink,
-} from "@chakra-ui/react";
+"use client";
+
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiHashnode } from "react-icons/si";
 
-const styles = {
-  deskLink: {
-    _hover: {
-      color: "#5E3BEE",
-      textDecoration: "none",
-    },
-  },
-};
-
 function Footer() {
   return (
-    <Box background="#F5FCFF" mt="3rem" id="footer">
-      <Container maxW="1200" p={{ base: "1rem", md: "3rem 0rem" }}>
-        <Flex
-          justify="space-between"
-          alignItems="center"
-          py={4}
-          wrap="wrap"
-          flexDirection={{ base: "column", md: "row" }}
-        >
-          <Image
-            src="logo.svg"
-            alt="logo"
-            height={{ base: "8", md: "10" }}
-            mb={{ base: "1rem" }}
-          />
+    <footer id="footer" className="bg-[#F5FCFF] mt-12">
+      <div className="max-w-6xl mx-auto px-6 py-8 md:py-12">
+        {/* Top Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          {/* Logo */}
+          <Image src="/logo.svg" alt="logo" width={120} height={40} />
 
-          <Flex
-            gap={{ base: "1", md: "5" }}
-            mt={{ base: "2", md: "0" }}
-            flexDirection={{ base: "column", md: "row" }}
-            display={{ base: "none", md: "flex" }}
-          >
-            <ChakraLink href="#" sx={styles.deskLink}>
+          {/* Navigation Links (hidden on mobile) */}
+          <nav className="hidden md:flex gap-6 text-sm font-medium">
+            <Link
+              href="#"
+              className="text-[#282938] hover:text-[#5E3BEE] transition-colors"
+            >
               Home
-            </ChakraLink>
-            <ChakraLink href="#portfolio" sx={styles.deskLink}>
+            </Link>
+            <Link
+              href="#portfolio"
+              className="text-[#282938] hover:text-[#5E3BEE] transition-colors"
+            >
               Portfolio
-            </ChakraLink>
-            <ChakraLink href="#aboutme" sx={styles.deskLink}>
+            </Link>
+            <Link
+              href="#aboutme"
+              className="text-[#282938] hover:text-[#5E3BEE] transition-colors"
+            >
               About Me
-            </ChakraLink>
-            <ChakraLink href="#contactme" sx={styles.deskLink}>
+            </Link>
+            <Link
+              href="#contactme"
+              className="text-[#282938] hover:text-[#5E3BEE] transition-colors"
+            >
               Contact
-            </ChakraLink>
-            <ChakraLink href="#blogs" sx={styles.deskLink}>
+            </Link>
+            <Link
+              href="#blogs"
+              className="text-[#282938] hover:text-[#5E3BEE] transition-colors"
+            >
               Blogs
-            </ChakraLink>
-            <ChakraLink
+            </Link>
+            <a
               href="/resume.pdf"
               download="kishor-kunal-resume.pdf"
-              sx={styles.deskLink}
+              className="text-[#282938] hover:text-[#5E3BEE] transition-colors"
             >
               Resume
-            </ChakraLink>
-          </Flex>
+            </a>
+          </nav>
 
-          <Flex
-            justify={{ base: "center", md: "flex-end" }}
-            align="center"
-            gap={4}
-            mt={{ base: "2", md: "0" }}
-          >
-            <a href="https://github.com/kunalkumar156">
-              <FaGithub size={23} />
+          {/* Social Icons */}
+          <div className="flex gap-4 text-[#282938]">
+            <a
+              href="https://github.com/kunalkumar156"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#5E3BEE] transition-colors"
+            >
+              <FaGithub size={22} />
             </a>
-            <a href="https://devsavant.hashnode.dev/">
-              <SiHashnode size={23} />
+            <a
+              href="https://devsavant.hashnode.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#5E3BEE] transition-colors"
+            >
+              <SiHashnode size={22} />
             </a>
-            <a href="https://twitter.com/btwitskishor">
-              <FaTwitter size={23} />
+            <a
+              href="https://twitter.com/btwitskishor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#5E3BEE] transition-colors"
+            >
+              <FaTwitter size={22} />
             </a>
-            <a href="https://www.linkedin.com/in/kishor-kunal-8a5656196/">
-              <FaLinkedin size={23} />
+            <a
+              href="https://www.linkedin.com/in/kishor-kunal-8a5656196/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#5E3BEE] transition-colors"
+            >
+              <FaLinkedin size={22} />
             </a>
-          </Flex>
-        </Flex>
+          </div>
+        </div>
 
-        <hr
-          style={{
-            margin: "20px 0",
-            width: "100%",
-            height: "1px",
-            backgroundColor: "rgba(40, 41, 56, 0.25)",
-          }}
-        />
+        {/* Divider */}
+        <hr className="my-6 border border-[#282938]/25" />
 
-        <Flex
-          alignItems="center"
-          justify="center"
-          flexDirection={{ base: "column", md: "row" }}
-          flexWrap={{ base: "wrap", md: "nowrap" }}
-        >
-          <Text
-            fontSize={{ base: "10px", md: "13px" }}
-            mb={{ base: "2", md: "0" }}
-          >
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-2 text-center">
+          <p className="text-xs md:text-sm text-[#282938]">
             Crafted with ❤️ by Kishor Kunal
-          </Text>
-        </Flex>
-      </Container>
-    </Box>
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 }
 
