@@ -30,7 +30,7 @@ function Nav() {
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="fixed top-4 left-0 w-full z-50 px-4"
+      className="fixed top-4 left-0 md:w-full w-[80%] z-50 px-4"
     >
       <nav
         className="mx-auto flex items-center justify-between 
