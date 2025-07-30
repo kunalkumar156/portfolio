@@ -117,6 +117,16 @@ function Portfolio() {
           isGitHubDisabled={false}
           isProjectDisabled={false}
         />
+        <PortfolioCard
+          key="second project"
+          image="auraicons.png"
+          heading="Aura Icons"
+          para="Aura Icons is a collection of beautiful and customizable icons designed to enhance the visual appeal of your web projects."
+          link="https://github.com/Shubham0850/aura-icons"
+          link2="https://icons.auraui.com/"
+          isGitHubDisabled={false}
+          isProjectDisabled={false}
+        />
       </Flex>
     </Container>
   );
