@@ -53,6 +53,7 @@ function Nav() {
               download={download ? "kishor-kunal-resume.pdf" : undefined}
               className="text-sm font-medium text-[#1C1E53] transition-colors hover:text-[#5E3BEE]"
               whileHover={{ y: -2 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               {label}
             </MotionLink>
