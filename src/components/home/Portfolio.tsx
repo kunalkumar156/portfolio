@@ -38,17 +38,16 @@ function PortfolioCard({
       whileHover={{ y: -6, scale: 1.02 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
-      {/* Fix image height for consistency */}
-      <Box h="220px" overflow="hidden">
-        <Image
-          src={image}
-          alt={heading}
-          w="100%"
-          h="100%"
-          objectFit="cover"
-          borderTopRadius="16px"
-        />
-      </Box>
+      {/* Full screenshot image */}
+      <Image
+        src={image}
+        alt={heading}
+        w="100%"
+        maxH="400px"
+        objectFit="contain"
+        borderTopRadius="16px"
+        bg="gray.50"
+      />
 
       <Box p={5}>
         <Text fontSize="20px" fontWeight="700" mb={2} color="#282938">
@@ -58,51 +57,63 @@ function PortfolioCard({
           {para}
         </Text>
 
-        {/* Chip style links */}
-        <Flex gap={3} wrap="wrap">
-          <Flex
+        {/* Cute chip buttons */}
+        <Flex gap={3} flexWrap="wrap">
+          {/* Project Link */}
+          <Box
             as="a"
-            href={!isProjectDisabled ? link2 : undefined}
+            href={isProjectDisabled ? undefined : link2}
             target="_blank"
             rel="noopener noreferrer"
-            align="center"
-            gap={2}
-            px={3}
-            py={1.5}
-            fontSize="13px"
-            fontWeight="500"
-            borderRadius="20px"
-            bg={isProjectDisabled ? "gray.200" : "teal.50"}
+            px={4}
+            py={2}
+            bg={isProjectDisabled ? "gray.100" : "teal.50"}
             color={isProjectDisabled ? "gray.500" : "teal.700"}
+            fontSize="14px"
+            fontWeight="500"
+            borderRadius="999px"
+            display="flex"
+            alignItems="center"
+            gap={2}
             cursor={isProjectDisabled ? "not-allowed" : "pointer"}
-            _hover={!isProjectDisabled ? { bg: "teal.100" } : {}}
+            pointerEvents={isProjectDisabled ? "none" : "auto"}
             transition="all 0.2s ease"
+            _hover={{
+              bg: isProjectDisabled ? "gray.100" : "teal.100",
+              transform: isProjectDisabled ? "none" : "translateY(-2px)",
+            }}
           >
             {isProjectDisabled ? "On Development" : "View Project"}
             <RxArrowTopRight />
-          </Flex>
+          </Box>
 
-          <Flex
+          {/* GitHub Link */}
+          <Box
             as="a"
-            href={!isGitHubDisabled ? link : undefined}
+            href={isGitHubDisabled ? undefined : link}
             target="_blank"
             rel="noopener noreferrer"
-            align="center"
-            gap={2}
-            px={3}
-            py={1.5}
-            fontSize="13px"
-            fontWeight="500"
-            borderRadius="20px"
-            bg={isGitHubDisabled ? "gray.200" : "teal.50"}
+            px={4}
+            py={2}
+            bg={isGitHubDisabled ? "gray.100" : "teal.50"}
             color={isGitHubDisabled ? "gray.500" : "teal.700"}
+            fontSize="14px"
+            fontWeight="500"
+            borderRadius="999px"
+            display="flex"
+            alignItems="center"
+            gap={2}
             cursor={isGitHubDisabled ? "not-allowed" : "pointer"}
-            _hover={!isGitHubDisabled ? { bg: "teal.100" } : {}}
+            pointerEvents={isGitHubDisabled ? "none" : "auto"}
             transition="all 0.2s ease"
+            _hover={{
+              bg: isGitHubDisabled ? "gray.100" : "teal.100",
+              transform: isGitHubDisabled ? "none" : "translateY(-2px)",
+            }}
           >
             {isGitHubDisabled ? "Private Repo" : "GitHub"}
             <RxArrowTopRight />
-          </Flex>
+          </Box>
         </Flex>
       </Box>
     </MotionBox>
