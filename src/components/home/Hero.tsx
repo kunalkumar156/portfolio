@@ -15,7 +15,14 @@ function Hero() {
       {/* Background Animated Gradient */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-[-10%] left-[-20%] w-[600px] h-[600px] bg-gradient-radial from-purple-400 via-pink-300 to-transparent rounded-full blur-3xl opacity-40 animate-pulse" />
-        <div className="absolute bottom-[-15%] right-[-15%] w-[600px] h-[600px] bg-gradient-radial from-blue-400 via-purple-300 to-transparent rounded-full blur-3xl opacity-40 animate-pulse" />
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+  w-[600px] h-[600px] 
+  bg-gradient-radial from-amber-300 via-orange-300 to-transparent 
+  rounded-full blur-3xl opacity-25"
+        />
+
+        <div className="absolute top-[-20%] right-[-15%] w-[600px] h-[600px] bg-gradient-radial from-pink-400 via-purple-300 to-transparent rounded-full blur-3xl opacity-40 animate-pulse" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 md:pt-40 md:pb-32">
