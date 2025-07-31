@@ -40,7 +40,7 @@ function PortfolioCard({
              border border-white/20
              shadow-[0_8px_30px_rgb(93,59,238,0.12)] 
              hover:shadow-[0_8px_40px_rgb(93,59,238,0.25)] 
-             transition-colors duration-300" // keep only color/shadow transition
+             transition-colors duration-300"
     >
       {/* Image */}
       <div className="bg-gradient-to-tr from-purple-50 via-white to-purple-50">
