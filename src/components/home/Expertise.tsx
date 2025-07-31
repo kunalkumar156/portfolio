@@ -61,12 +61,12 @@ export default function Expertise() {
         />
       </div>
 
-      <p className="font-semibold text-[#5E3BEE] mb-3 ">My Skills</p>
+      <p className="font-semibold text-[#5E3BEE] mb-3 ml-1 ">My Skills</p>
       <SplitText
         text="My Expertise"
         className="text-3xl md:text-5xl font-bold text-[#282938] mb-12 "
         delay={20}
-        duration={0.6}
+        duration={1.6}
         ease="power3.out"
         splitType="chars"
         from={{ opacity: 0, y: 20 }}
