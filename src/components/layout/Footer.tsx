@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaGithub, FaNpm } from "react-icons/fa";
 import { SiHashnode } from "react-icons/si";
 
 function Footer() {
@@ -23,85 +23,63 @@ function Footer() {
             <Image src="/logo.svg" alt="logo" width={140} height={40} />
             <p className="text-sm text-[#1C1E53]">
               Building with passion — powered by{" "}
-              <span className="font-semibold text-[#5E3BEE]">AuraUI</span>
+              <a
+                href="https://www.auraui.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#5E3BEE]"
+              >
+                auraUI
+              </a>
             </p>
           </div>
-
-          {/* Navigation Links */}
-          <nav className="flex flex-wrap justify-center md:justify-end gap-6 text-sm font-medium">
-            <Link
-              href="#"
-              className="text-[#282938] hover:text-[#5E3BEE] transition-colors"
-            >
-              Home
-            </Link>
-            <Link
-              href="#portfolio"
-              className="text-[#282938] hover:text-[#5E3BEE] transition-colors"
-            >
-              Portfolio
-            </Link>
-            <Link
-              href="#aboutme"
-              className="text-[#282938] hover:text-[#5E3BEE] transition-colors"
-            >
-              About Me
-            </Link>
-            <Link
-              href="#blogs"
-              className="text-[#282938] hover:text-[#5E3BEE] transition-colors"
-            >
-              Blogs
-            </Link>
-            <Link
-              href="#contactme"
-              className="text-[#282938] hover:text-[#5E3BEE] transition-colors"
-            >
-              Contact
-            </Link>
-            <a
-              href="/resume.pdf"
-              download="kishor-kunal-resume.pdf"
-              className="text-[#282938] hover:text-[#5E3BEE] transition-colors"
-            >
-              Resume
-            </a>
-          </nav>
-
           {/* Social Icons */}
           <div className="flex gap-5">
-            <a
-              href="https://github.com/kunalkumar156"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full bg-white/20 backdrop-blur-md shadow-sm hover:shadow-md hover:bg-[#5E3BEE]/10 transition-all"
-            >
-              <FaGithub size={20} className="text-[#282938]" />
-            </a>
-            <a
-              href="https://devsavant.hashnode.dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full bg-white/20 backdrop-blur-md shadow-sm hover:shadow-md hover:bg-[#5E3BEE]/10 transition-all"
-            >
-              <SiHashnode size={20} className="text-[#282938]" />
-            </a>
-            <a
-              href="https://twitter.com/btwitskishor"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full bg-white/20 backdrop-blur-md shadow-sm hover:shadow-md hover:bg-[#5E3BEE]/10 transition-all"
-            >
-              <FaTwitter size={20} className="text-[#282938]" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/kishor-kunal-8a5656196/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full bg-white/20 backdrop-blur-md shadow-sm hover:shadow-md hover:bg-[#5E3BEE]/10 transition-all"
-            >
-              <FaLinkedin size={20} className="text-[#282938]" />
-            </a>
+            {[
+              {
+                href: "https://github.com/kunalkumar156",
+                icon: <FaGithub size={20} />,
+                label: "GitHub",
+              },
+              {
+                href: "https://www.npmjs.com/~kunalkumar156",
+                icon: <FaNpm size={20} />,
+                label: "NPM",
+              },
+              {
+                href: "https://devsavant.hashnode.dev/",
+                icon: <SiHashnode size={20} />,
+                label: "Hashnode",
+              },
+              {
+                href: "https://twitter.com/btwitskishor",
+                icon: <FaTwitter size={20} />,
+                label: "Twitter",
+              },
+              {
+                href: "https://www.linkedin.com/in/kishor-kunal-8a5656196/",
+                icon: <FaLinkedin size={20} />,
+                label: "LinkedIn",
+              },
+            ].map((item, idx) => (
+              <a
+                key={idx}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.label}
+                className="group p-2 rounded-full bg-white/20 backdrop-blur-md 
+                 shadow-sm transition-all duration-300 hover:shadow-lg 
+                 hover:bg-[#5E3BEE]/20"
+              >
+                <span
+                  className="text-[#1C1E53] group-hover:text-[#5E3BEE] 
+                   transition-colors duration-300"
+                >
+                  {item.icon}
+                </span>
+              </a>
+            ))}
           </div>
         </div>
 
