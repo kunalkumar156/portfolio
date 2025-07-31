@@ -64,23 +64,36 @@ function AboutMe() {
           />
 
           <p className="text-[#1C1E53] leading-relaxed">
-            I&apos;m a web developer specializing in front-end technologies with
-            a diverse set of skills and experiences. My journey in web
-            development has been enriched by working with various tools,
-            frameworks, and the component library that I am building –{" "}
-            <span className="font-semibold text-[#5E3BEE]">AuraUI</span>.
+            I&apos;m a web developer passionate about crafting modern,
+            high-performance experiences. I built{" "}
+            <a
+              href="https://www.auraui.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[#5E3BEE] hover:underline"
+            >
+              AuraUI
+            </a>
+            , an open-source React component library, and specialize in React,
+            Next.js, Vite, and TypeScript/JavaScript.
           </p>
+
           <p className="text-[#1C1E53] mt-5 leading-relaxed">
-            I am well-versed in building responsive and accessible user
-            interfaces using AuraUI, Chakra UI, and Material-UI. My proficiency
-            extends to collaborating with design teams, where I leverage tools
-            like Figma and Canva to bring creative concepts to life.
+            My backend expertise includes working with{" "}
+            <span className="font-semibold text-[#5E3BEE]">Supabase</span> for
+            auth, databases, and APIs, along with Git/GitHub for version control
+            and open-source collaboration. I enjoy designing smooth interactions
+            with{" "}
+            <span className="font-semibold text-[#5E3BEE]">Framer Motion</span>{" "}
+            and building scalable solutions with REST APIs and schemas.
           </p>
+
           <p className="text-[#1C1E53] mt-5 leading-relaxed">
-            In addition, I am comfortable working in a Linux environment,
-            ensuring smooth development workflows. I am always eager to explore
-            new technologies and frameworks, including AuraUI, to enhance my
-            skills and deliver high-quality web applications.
+            Beyond web, I explore{" "}
+            <span className="font-semibold text-[#5E3BEE]">Electron</span> for
+            desktop apps and even AppleScript automation. With a strong design
+            eye using Figma/Canva and a Linux-based workflow, I aim to deliver
+            projects that blend performance, design, and innovation.
           </p>
         </motion.div>
       </div>
