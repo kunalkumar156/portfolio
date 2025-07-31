@@ -10,20 +10,29 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Kishor Kunal| Personal Portfolio</title>
+        <title>Kishor Kunal | Personal Portfolio</title>
         <meta
           name="description"
-          content="This is the personal portfolio website of kishor kunal"
+          content="This is the personal portfolio website of Kishor Kunal"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero />
-      <Expertise />
-      <AboutMe />
-      <Portfolio />
-      <Blogs />
-      <ContactMe />
+
+      {/* Section-wise wrappers */}
+      <section className="relative overflow-hidden">
+        <Hero />
+
+        <Expertise />
+
+        <AboutMe />
+
+        <Portfolio />
+
+        <Blogs />
+
+        <ContactMe />
+      </section>
     </>
   );
 }

@@ -36,10 +36,10 @@ function AboutMe() {
               alt="About me image"
               width={600}
               height={500}
-              className="rounded-2xl shadow-xl object-contain"
+              className="rounded-2xl shadow-xl bg-white/70 object-contain"
             />
             {/* Decorative glow */}
-            <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-gradient-to-tr from-purple-400 via-pink-300 to-transparent rounded-full blur-2xl opacity-40" />
+            <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-gradient-to-tr from-purple-400 via-pink-300 to-transparent rounded-full blur-2xl opacity-40 -z-10" />
           </div>
         </motion.div>
 
