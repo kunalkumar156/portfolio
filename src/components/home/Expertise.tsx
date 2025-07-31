@@ -11,6 +11,7 @@ import {
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 import SplitText from "../animations/SplitText";
+import { SiSupabase, SiGit, SiFramer } from "react-icons/si";
 
 type MySkillsProps = {
   IconComponent: React.ComponentType<{ className?: string }>;
@@ -105,21 +106,21 @@ export default function Expertise() {
           delay={0.5}
         />
         <MySkills
-          IconComponent={FaSass}
-          heading="SASS"
-          para="Styling with advanced preprocessor features."
+          IconComponent={SiSupabase}
+          heading="Supabase"
+          para="Powerful backend as a service with authentication, database, and APIs."
           delay={0.6}
         />
         <MySkills
-          IconComponent={SiMongodb}
-          heading="MongoDB"
-          para="Managing data efficiently with NoSQL databases."
+          IconComponent={SiGit}
+          heading="Git"
+          para="Version control system for efficient collaboration and project tracking."
           delay={0.7}
         />
         <MySkills
-          IconComponent={SiRedux}
-          heading="Redux"
-          para="State management for scalable apps."
+          IconComponent={SiFramer}
+          heading="Framer Motion"
+          para="Creating smooth and interactive animations in React applications."
           delay={0.8}
         />
       </div>
