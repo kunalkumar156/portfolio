@@ -120,7 +120,7 @@ export default function Portfolio() {
       </div>
 
       {/* Header */}
-      <div className="mb-16">
+      <div>
         <p className="font-semibold text-[#5E3BEE] mb-3 ml-1">
           Recent Projects
         </p>

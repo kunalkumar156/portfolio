@@ -67,7 +67,7 @@ function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
-                className="px-8 py-4  font-semibold text-white bg-[#5E3BEE] hover:bg-white hover:text-[#5E3BEE] border-2 border-[#5E3BEE] transition-all duration-300 shadow-lg rounded-full"
+                className="md:px-8 md:py-4 px-6 py-3 font-semibold text-white bg-[#5E3BEE] hover:bg-white hover:text-[#5E3BEE] border-2 border-[#5E3BEE] transition-all duration-300 shadow-lg rounded-full"
               >
                 Get In Touch
               </motion.button>

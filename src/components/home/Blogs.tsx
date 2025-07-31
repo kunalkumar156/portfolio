@@ -78,7 +78,7 @@ function Blogs() {
       <p className="font-semibold text-[#5E3BEE] mb-3 ml-1">Blogs</p>
       <SplitText
         text="Explore My Recent Blogs"
-        className="text-3xl md:text-5xl font-bold text-[#282938] mb-16"
+        className="text-2xl md:text-5xl font-bold text-[#282938] mb-16"
         delay={20}
         duration={1.6}
         ease="power3.out"
