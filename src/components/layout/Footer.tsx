@@ -90,7 +90,14 @@ function Footer() {
         <div className="text-center text-sm text-[#1C1E53]">
           <p>
             © {new Date().getFullYear()} Crafted with ❤️ by{" "}
-            <span className="font-semibold text-[#5E3BEE]">Kishor Kunal</span>
+            <a
+              href="https://www.linkedin.com/in/kishor-kunal-8a5656196/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[#5E3BEE]"
+            >
+              Kishor Kunal
+            </a>
           </p>
         </div>
       </div>
