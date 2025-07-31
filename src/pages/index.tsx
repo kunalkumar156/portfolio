@@ -5,6 +5,7 @@ import Head from "next/head";
 import Portfolio from "@/components/home/Portfolio";
 import ContactMe from "@/components/home/ContactMe";
 import Blogs from "@/components/home/Blogs";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -22,16 +23,12 @@ export default function Home() {
       {/* Section-wise wrappers */}
       <section className="relative overflow-hidden">
         <Hero />
-
         <Expertise />
-
         <AboutMe />
-
         <Portfolio />
-
         <Blogs />
-
         <ContactMe />
+        <Footer />
       </section>
     </>
   );

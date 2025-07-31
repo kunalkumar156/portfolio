@@ -50,7 +50,7 @@ export default function ContactCTA() {
                        text-white font-semibold transition-all duration-300"
           >
             <a
-              href="mailto:yoyokunal156@gmail.com?subject=Let's Connect&body=Hi Kunal,"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=yoyokunal156@gmail.com&su=Let's%20Connect&body=Hi%20Kunal,"
               target="_blank"
               rel="noopener noreferrer"
             >
