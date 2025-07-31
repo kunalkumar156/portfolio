@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FaJs, FaSass, FaNpm, FaReact } from "react-icons/fa";
+import { FaJs, FaSass, FaReact } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiTypescript,

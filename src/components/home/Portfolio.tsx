@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { RxArrowTopRight } from "react-icons/rx";
 import { Button } from "@/components/ui/button"; // shadcn button
 import { cn } from "@/lib/utils";
+import SplitText from "../animations/SplitText";
 
 const MotionDiv = motion.div;
 
@@ -29,14 +30,17 @@ function PortfolioCard({
 }: PortfolioCardProps) {
   return (
     <MotionDiv
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true }}
+      whileHover={{ scale: 1.01 }}
       className="group relative rounded-2xl 
-                 bg-white/10 backdrop-blur-xl
-                 border border-white/20
-                 shadow-[0_8px_30px_rgb(93,59,238,0.12)] 
-                 hover:shadow-[0_8px_40px_rgb(93,59,238,0.25)] 
-                 transition-all duration-300"
-      whileHover={{ y: -6, scale: 1.02 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
+             bg-white/10 backdrop-blur-xl
+             border border-white/20
+             shadow-[0_8px_30px_rgb(93,59,238,0.12)] 
+             hover:shadow-[0_8px_40px_rgb(93,59,238,0.25)] 
+             transition-colors duration-300" // keep only color/shadow transition
     >
       {/* Image */}
       <div className="bg-gradient-to-tr from-purple-50 via-white to-purple-50">
@@ -116,11 +120,20 @@ export default function Portfolio() {
       </div>
 
       {/* Header */}
-      <div className="text-center mb-16">
-        <p className="font-semibold text-[#5E3BEE] mb-3">Recent Projects</p>
-        <h2 className="text-3xl md:text-5xl font-bold text-[#282938]">
-          My Portfolio
-        </h2>
+      <div className="mb-16">
+        <p className="font-semibold text-[#5E3BEE] mb-3 ml-1">
+          Recent Projects
+        </p>
+        <SplitText
+          text="My Portfolio"
+          className="text-3xl md:text-5xl font-bold text-[#282938] mb-12 "
+          delay={20}
+          duration={1.8}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 20 }}
+          to={{ opacity: 1, y: 0 }}
+        />
       </div>
 
       {/* Grid */}
